@@ -241,7 +241,7 @@ LeetCode题目比较多，我一般选择Hot/Top 100 练习。
 
 分公司分岗位的面经可参考：www.nowcoder.com
 
-我的个人面经总结：https://github.com/mio4/learn-java/blob/master/Note/interview.md，总共250页的PDF，综合个人经历的所有面试，题目覆盖率至少有50%。根据研二转专业的同学反馈来看，作用很大。
+我的个人面经总结：https://github.com/mio4/learn-java/blob/master/Note/interview.md ，总共250页的PDF，综合个人经历的所有面试，题目覆盖率至少有50%。根据研二转专业的同学反馈来看，作用很大。
 
 **TODO 未完待续**
 
