@@ -24,9 +24,9 @@
 
 # 2019校招经验
 
-[秋招准备过程](/2019 campus interview.md)
+[秋招准备过程]([https://github.com/mio4/Java-Gold/blob/master/campus/2019%20campus%20interview.md](https://github.com/mio4/Java-Gold/blob/master/campus/2019 campus interview.md))
 
-[秋招面经总结](2019 campus note.pdf)
+[秋招面经总结]([https://github.com/mio4/Java-Gold/blob/master/campus/2019%20campus%20note.pdf](https://github.com/mio4/Java-Gold/blob/master/campus/2019 campus note.pdf))
 
 
 
