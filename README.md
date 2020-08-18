@@ -26,6 +26,7 @@
 
 
 
+
 **欢迎大家Star和Fork，你的关注就是我持续更新的动力！！！**
 
 
@@ -41,6 +42,8 @@
 :point_right: [秋招面经总结](https://github.com/mio4/Java-Gold/blob/master/campus/2019-campus-note.pdf)
 
 
+:point_right: [百度实习经历]
+:point_right: [字节跳动实习经历]
 
 
 
@@ -74,7 +77,7 @@
 
 # 社招
 
-蓄力中，这块更新要等一段时间了
+TODO，半年后更新
 
 
 
