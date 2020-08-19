@@ -1,1 +1,17 @@
 update_all.sh
+
+# idea files
+.gitignore
+*.iml
+.idea
+target
+build
+.DS_Store
+*.jar
+logs/
+.gradle
+.gradletasknamecache
+classes/
+/upload
+out/
+
