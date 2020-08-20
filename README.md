@@ -9,19 +9,19 @@
     <img src="https://img.shields.io/badge/Branch-master-green.svg?longCache=true"
         alt="Branch">
   </a>
-  <a href="https://github.com/doinb08/bat_offer/stargazers">
+  <a href="https://github.com/mio4/Java-Gold/stargazers">
     <img src="https://img.shields.io/github/stars/doinb08/bat_offer.svg?label=Stars&style=social"
         alt="Stars">
   </a>
-    <a href="https://github.com/doinb08/bat_offer/network/members">
+    <a href="https://github.com/mio4/Java-Gold/network/members">
     <img src="https://img.shields.io/github/forks/doinb08/bat_offer.svg?label=Forks&style=social"
         alt="Forks">
   </a>
-  <a href="https://github.com/doinb08/bat_offer">
+  <a href="https://github.com/mio4/Java-Gold">
     <img src="https://img.shields.io/badge/License-GNU-blue.svg?longCache=true"
         alt="License">
   </a>
-   <a href="https://github.com/doinb08/bat_offer">
+   <a href="https://github.com/mio4/Java-Gold">
    <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"
         alt="Awesome">
   </a>
