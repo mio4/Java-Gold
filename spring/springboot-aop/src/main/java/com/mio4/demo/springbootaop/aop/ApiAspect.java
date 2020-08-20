@@ -8,19 +8,25 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 /**
- * @author moduo
+ * @author mio4
  * @date 2020-08-19 22:31
  */
 
 @Aspect
 @Component
-public class ApiControllerAspect {
+public class ApiAspect {
+
+    /**
+     * 定义一个切点
+     */
+    @Pointcut("execution(* com.mio4.demo.springbootaop.controller.*.*(..))")
+    public void allControllerPointcut(){ }
 
     /**
      * 前置通知：目标方法执行之前执行以下方法体的内容
      * @param jp
      */
-    @Before("execution(* com.mio4.demo.springbootaop.controller.*.*(..))")
+    @Before("allControllerPointcut()")
     public void beforeMethod(JoinPoint jp){
         String methodName = jp.getSignature().getName();
         System.out.println("【前置通知】the method 【" + methodName + "】 begins with " + Arrays.asList(jp.getArgs()));
@@ -73,6 +79,32 @@ public class ApiControllerAspect {
         }
 
         System.out.println("【环绕通知中的--->后置通知】：-----------------end.----------------------");
+        return result;
+    }
+
+
+    //-------------------------------------------------------------------------------------
+    @Around("allControllerPointcut()")
+    public Object aroundMethodWithProceeding(ProceedingJoinPoint pjd){
+        Object result;
+        try {
+            //前置通知
+            System.out.println("[aroundMethodWithProceeding] 目标方法执行前...");
+            //demo-1. 执行原有方法
+            //result = pjd.proceed();
+
+            //demo-2. 用新的参数值执行目标方法
+            result = pjd.proceed(new Object[]{"mio4"});
+            //返回通知
+            System.out.println("[aroundMethodWithProceeding] 目标方法返回结果后...");
+        } catch (Throwable e) {
+            //异常通知
+            System.out.println("[aroundMethodWithProceeding] 执行目标方法异常后...");
+            throw new RuntimeException(e);
+        }
+        //后置通知
+        System.out.println("[aroundMethodWithProceeding] 目标方法执行后...");
+        //必须要将ProceedingJoinPoint执行结果返回
         return result;
     }
 }
