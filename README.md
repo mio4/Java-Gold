@@ -10,11 +10,11 @@
         alt="Branch">
   </a>
   <a href="https://github.com/mio4/Java-Gold/stargazers">
-    <img src="https://img.shields.io/github/stars/doinb08/bat_offer.svg?label=Stars&style=social"
+    <img src="https://img.shields.io/github/stars/mio4/Java-Gold"
         alt="Stars">
   </a>
     <a href="https://github.com/mio4/Java-Gold/network/members">
-    <img src="https://img.shields.io/github/forks/doinb08/bat_offer.svg?label=Forks&style=social"
+    <img src="https://img.shields.io/github/forks/mio4/Java-Gold"
         alt="Forks">
   </a>
   <a href="https://github.com/mio4/Java-Gold">
