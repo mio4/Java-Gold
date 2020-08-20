@@ -63,6 +63,11 @@ public class ApiAspect {
 
     /**
      * 环绕通知：目标方法执行前后分别执行一些代码，发生异常的时候执行另外一些代码
+     *
+     * 切面功能举例：
+     * [1] 对HTTP请求进行鉴权
+     * [2] 如果HttpResponse不符合预期，打印日志
+     *
      * @return
      */
     @Around(value="execution(* com.mio4.demo.springbootaop.controller.*.*(..))")

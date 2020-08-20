@@ -71,32 +71,35 @@
 
 
 
-
 **欢迎大家Star和Fork，你的关注就是我持续更新的动力！！！**
 
 
 
 
 
-# 2019校招经验
+# 2019校招总结
 
-:point_right:  [秋招准备过程](https://github.com/mio4/Java-Gold/blob/master/campus/2019-campus-interview.md)
-
-
-
-:point_right: [秋招面经总结](https://github.com/mio4/Java-Gold/blob/master/campus/2019-campus-note.pdf)
+:point_right:  [校招一年时间从小白到ssp](https://github.com/mio4/Java-Gold/blob/master/01-campus/2019-campus-interview.md)
 
 
-:point_right: [百度实习经历]
-:point_right: [字节跳动实习经历]
+
+:point_right: [校招高频面试题总结](https://github.com/mio4/Java-Gold/blob/master/01-campus/2019-campus-note.pdf)
+
+
+
+:point_right: [百度实习总结]()
+
+
+
+:point_right: [字节跳动实习总结]()
 
 
 
 # 简历准备
 
-简历模板：[TODO]
+:point_right: [简历模板]()
 
-
+:point_right: 
 
 
 
@@ -122,7 +125,7 @@
 
 # 社招
 
-TODO，半年后更新
+TODO
 
 
 
