@@ -20,7 +20,7 @@ import java.util.List;
  * @author moduo
  * @date 2020-08-13 22:14
  */
-public class HBaseUtils {
+public class HbaseUtils {
 
     private static Connection connection;
 

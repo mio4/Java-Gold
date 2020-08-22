@@ -89,11 +89,12 @@
 
 
 
-:point_right: [百度实习总结]()
+:point_right: [百度实习总结](https://www.zhihu.com/question/341515180/answer/1270104555)
 
 
 
-:point_right: [字节跳动实习总结]()
+:point_right: [字节跳动实习总结](https://www.zhihu.com/question/28881353/answer/1186999283)
+
 
 
 
