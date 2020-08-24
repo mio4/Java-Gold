@@ -47,37 +47,32 @@
 
 &ensp; &ensp;&ensp;   本仓库能够能够以及计划中提供的资源：
 
-【1】校招
 
 
-
-
-
-&ensp; &ensp; 本仓库的主要关注点以及提供的资源如下：
-
-
-
-- [x] **校招学习路线、资料**
-- [x] **校招面经总结以及面试复盘**
-- [x] **校招简历模板以及书写技巧**
-
-
-
-<p align="center">
+<p align="left">
 <a>
 <img src="https://img.shields.io/badge/%E6%A0%A1%E6%8B%9B-%E9%AB%98%E9%A2%91%E9%9D%A2%E7%BB%8F-brightgreen"
         alt="Awesome"> 
 </a> 秋招/春招中后端岗的高频面试题汇总、整理
 </p>
 
-
-
-<p align="center">
+<p align="left">
 <a>
 <img src="https://img.shields.io/badge/%E6%A0%A1%E6%8B%9B-%E7%AE%80%E5%8E%86%E5%87%86%E5%A4%87-orange"
         alt="Awesome"> 
 </a> 校招简历模板/简历书写技巧
 </p>
+
+<p align="left">
+<a>
+<img src="https://img.shields.io/badge/%E7%A4%BE%E6%8B%9B-%E5%90%8E%E7%AB%AF%E9%9D%A2%E7%BB%8F-blue"
+        alt="Awesome"> 
+</a> 校招简历模板/简历书写技巧
+</p>
+
+
+
+
 
 
 
