@@ -65,6 +65,13 @@
 
 <p align="left">
 <a>
+<img src="https://img.shields.io/badge/Java-%E6%97%A5%E5%B8%B8%E8%BF%9B%E9%98%B6-red"
+        alt="Awesome"> 
+</a> 校招简历模板/简历书写技巧
+</p>
+
+<p align="left">
+<a>
 <img src="https://img.shields.io/badge/%E7%A4%BE%E6%8B%9B-%E5%90%8E%E7%AB%AF%E9%9D%A2%E7%BB%8F-blue"
         alt="Awesome"> 
 </a> 校招简历模板/简历书写技巧
