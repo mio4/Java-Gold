@@ -65,10 +65,22 @@
 
 <p align="center">
 <a>
-<img src="https://img.shields.io/badge/%E6%A0%A1%E6%8B%9B-%E6%B5%8B%E8%AF%95%20-brightgreen"
+<img src="https://img.shields.io/badge/%E6%A0%A1%E6%8B%9B-%E9%AB%98%E9%A2%91%E9%9D%A2%E7%BB%8F-brightgreen"
         alt="Awesome"> 
-</a> 测试测试
+</a> 秋招/春招中后端岗的高频面试题汇总、整理
 </p>
+
+
+
+<p align="center">
+<a>
+<img src="https://img.shields.io/badge/%E6%A0%A1%E6%8B%9B-%E7%AE%80%E5%8E%86%E5%87%86%E5%A4%87-orange"
+        alt="Awesome"> 
+</a> 校招简历模板/简历书写技巧
+</p>
+
+
+
 
 - 在BAT（Baidu & Bytedance）实习期间，参与了组里几十份简历的审核，了解什么样的简历才是好的简历。
 - 已经帮助过一些同学准备秋招，包括转专业同学，并且取得了比较好的效果。
