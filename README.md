@@ -63,10 +63,12 @@
 
 
 
-
-
+<p align="center">
+<a>
 <img src="https://img.shields.io/badge/%E6%A0%A1%E6%8B%9B-%E6%B5%8B%E8%AF%95%20-brightgreen"
-        alt="Awesome">
+        alt="Awesome"> 
+</a> 测试测试
+</p>
 
 - 在BAT（Baidu & Bytedance）实习期间，参与了组里几十份简历的审核，了解什么样的简历才是好的简历。
 - 已经帮助过一些同学准备秋招，包括转专业同学，并且取得了比较好的效果。
