@@ -31,7 +31,7 @@ public class CheckedExceptionHandler {
             }
         };
     }
-    public static void test(){
+    public static void handleCheckedException(){
         List<Integer> integers = Arrays.asList(5,4,3,2,1,0);
         integers.forEach(throwingConsumerWrapper(i -> System.out.println(1/i)));
     }
