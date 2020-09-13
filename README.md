@@ -150,7 +150,7 @@ TODO 预计9.15之前更新
 
 # 面试炼金系列
 
-[Java面试炼金系列 (1) | 关于String类的常见面试题剖析](https://github.com/mio4/Java-Gold/blob/master/09-draft/001/01-String.md)
+[Java面试炼金系列 (1) | 关于String类的常见面试题剖析](https://github.com/mio4/Java-Gold/blob/master/09-paper/001/01-String.md)
 
 
 
