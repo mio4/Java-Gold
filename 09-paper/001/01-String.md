@@ -2,8 +2,6 @@
 
 > 文章以及源代码已被收录到：https://github.com/mio4/Java-Gold
 
-[toc]
-
 
 
 # 0x0 基础知识
@@ -324,9 +322,11 @@ String s2 = new String("Hello");
 
 
 
+---
 
 
-> 参考|引用
+
+### 参考|引用
 
 https://blog.csdn.net/justloveyou_/article/details/52464440
 
