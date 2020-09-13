@@ -73,17 +73,15 @@ str3 == str4 : false
 
 在Java语言中，所有类都是继承于`Object`这个超类的，在这个类中也有一个`equals()`方法，那么我们先来看一下这个方法。
 
-![image-20200909213450555](D:\python-spider\000-01\001\image-20200909213450555.png)
+![image-20200909213432756](image-20200909213432756.png)
 
-![image-20200909213432756](D:\python-spider\000-01\001\image-20200909213432756.png)
-
-​	
+​	![image-20200909213450555](image-20200909213450555.png)
 
 可以看得出，这个方法很简单，就是比较对象的内存地址的。所以在对象没有重写这个方法时，默认使用此方法，即比较对象的内存地址值。但是类似于String、Integer等类均已重写了`equals()`。下面以`String`为例。
 
 ### 2.2 String类equals()
 
-![image-20200909213550726](D:\python-spider\000-01\001\image-20200909213550726.png)!
+![image-20200909213650391](image-20200909213650391.png)
 
 很明显，String的equals()方法仅仅是对比它的 **数据值**，而不是对象的 **内存地址** 。
 
@@ -290,9 +288,9 @@ System.out.println(s3.equals(s2));    //true  比较两个对象的值相等。
 
 s1会在常量池中创建，s2先查看常量池中有没有，如果有的话就指向它，如果没有就在常量池中创建一个然后指向它。所以s1和s2的两种比较是相同的。
 
-![image-20200913112428436](/Users/mio/mio/repo/Java-Gold/09-draft/001/image-20200913112428436.png)
+![image-20200913112428436](image-20200913112428436.png)
 
-![image-20200913112653730](/Users/mio/mio/repo/Java-Gold/09-draft/001/image-20200913112653730.png)
+![image-20200913112653730](image-20200913112653730.png)
 
 
 
@@ -318,7 +316,7 @@ String s2 = new String("Hello");
 - String是不可变类，每当我们对String进行操作的时候，总是会创建新的字符串。操作String很耗资源,所以Java提供了两个工具类来操作String ：StringBuffer和StringBuilder。
 - StringBuffer和StringBuilder是可变类，StringBuffer是线程安全的，StringBuilder则不是线程安全的。所以在多线程对同一个字符串操作的时候，我们应该选择用StringBuffer。由于不需要处理多线程的情况，StringBuilder的效率比StringBuffer高。
 - 引申问题：StringBuffer为啥是线程安全的？ —StringBuffer里所有的方法都被`synchronized` 修饰：
-  - ![image-20200913113514034](/Users/mio/mio/repo/Java-Gold/09-draft/001/image-20200913113514034.png)
+  - ![image-20200913113514034](image-20200913113514034.png)
 
 
 
