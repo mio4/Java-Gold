@@ -1,9 +1,5 @@
 <h2 align="center"><code>☕ Java炼金小木屋</code></h2>
 
-<br>
-    <p align="center"><i>Java校招/社招指南</i></p>
-<br>
-
 <p align="center">
   <a href="https://github.com/mio4/Java-Gold.git">
     <img src="https://img.shields.io/badge/Branch-master-green.svg?longCache=true"
@@ -26,13 +22,6 @@
         alt="Awesome">
   </a>
 </p>
-<br>
-    <div align="center">
-      Created by
-      <a href="https://github.com/mio4">mio4</a>
-    </div>
-<br>
-
 
 ![](01-campus/readme_pics/header.png)
 
