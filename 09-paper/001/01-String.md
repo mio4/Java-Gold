@@ -1,5 +1,7 @@
 # Java面试炼金系列 (1)  | 关于String类的常见面试题剖析
 
+![](header.png)
+
 > 文章以及源代码已被收录到：https://github.com/mio4/Java-Gold
 
 
