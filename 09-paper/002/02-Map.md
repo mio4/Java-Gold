@@ -6,6 +6,8 @@
 
 
 
+> 文章以及源代码已被收录到：https://github.com/mio4/Java-Gold
+
 ### 1. 集合体系
 
 Java集合是面试中的重要考点，特别是List和Map接口实现类，属于工作中CRUD最常用的工具，所以经常在面试中出现，用于考察面试者的Java基本功。
@@ -89,7 +91,7 @@ HashMap内部实现细节是面试中最常见的高频考点，除了最基础�
 
 ## 1. Hashmap是如何解决哈希碰撞问题的？
 
-![image-20200916100429192](D:\002-Repository\Java-Gold\09-paper\002\image-20200916100429192.png)
+![image-20200916100429192](image-20200916100429192.png)
 
 - JDK1.7中，HashMap就是使用哈希表来存储的。哈希表为解决冲突，可以采用开放地址法和链地址法等来解决问题，Java中HashMap采用了**链地址法**。链地址法，简单来说，就是数组加链表的结合。在每个数组元素上都一个链表结构，当数据被Hash后，得到数组下标，把数据放在对应下标元素的链表上。
 - JDK1.8中，链表长度超过8会转换为红黑树，但本质上也是通过在节点上追加生成链表的方式解决哈希冲突。
@@ -98,7 +100,7 @@ HashMap内部实现细节是面试中最常见的高频考点，除了最基础�
 
 ## 2. Map接口各个实现类之间的区别？（HashMap、LinkedHashMap、TreeMap）
 
-![image-20200916100853302](D:\002-Repository\Java-Gold\09-paper\002\image-20200916100853302.png)
+![image-20200916100853302](image-20200916100853302.png)
 
 - Hashtable：**Hashtable是遗留类**，很多映射的常用功能与HashMap类似，不同的是它承自Dictionary类，并且是线程安全的，任一时间只有一个线程能写Hashtable，并发性不如ConcurrentHashMap，因为ConcurrentHashMap引入了分段锁。Hashtable不建议在新代码中使用，不需要线程安全的场合可以用HashMap替换，需要线程安全的场合可以用ConcurrentHashMap替换。
 - LinkedHashMap：LinkedHashMap是HashMap的一个子类，保存了记录的插入顺序，在用Iterator遍历LinkedHashMap时，先得到的记录肯定是先插入的，也可以在构造时带参数，按照访问次序排序。
@@ -162,6 +164,13 @@ HashMap在jdk1.8之后引入了红黑树的概念，表示若桶中链表元素�
 
 ## 5. HashMap的负载因子是什么？
 
+HashMap中定义的两个参数：
+
+- Initial Capacity：初始化容量，它表示HashMap底层的那个数组，也就是Entry数组有多长，**这个值默认是16。**
+- Load Factor：**负载因子**，它表示HashMap的负载程度，换句话说，它表示HashMap到底有多满了，是不是需要扩容了，**这个值默认是0.75f。**
+
+
+
 
 
 ## 6. HashMap扩容相关问题
@@ -213,3 +222,5 @@ https://blog.csdn.net/qq_36520235/article/details/82417949
 https://blog.csdn.net/carson_ho/article/details/79373134
 
 https://www.cnblogs.com/twoheads/p/10667449.html
+
+https://zhuanlan.zhihu.com/p/86001720
