@@ -162,18 +162,78 @@ HashMap在jdk1.8之后引入了红黑树的概念，表示若桶中链表元素�
 
 
 
-## 5. HashMap的负载因子是什么？
+## 5. HashMap扩容相关问题
+
+### 5.1 HashMap的负载因子是什么？
 
 HashMap中定义的两个参数：
 
 - Initial Capacity：初始化容量，它表示HashMap底层的那个数组，也就是Entry数组有多长，**这个值默认是16。**
 - Load Factor：**负载因子**，它表示HashMap的负载程度，换句话说，它表示HashMap到底有多满了，是不是需要扩容了，**这个值默认是0.75f。**
 
+**这两个数值会影响到HashMap的扩容，而扩容是一个对性能影响非常大的操作。**
+
+负载因子大小对**性能**的影响：
+
+- 过小：容易发生reszie，消耗性能
+- 过大：容易发生hash碰撞，链表变长，红黑树变高
 
 
 
+### 5.2 HashMap扩容操作是什么？发生场景？
 
-## 6. HashMap扩容相关问题
+**HashMap的扩容**：HashMap被初始化之后，其容量是有限的（可以是默认，也可以是自定义的），当元素不断被插入，是HashMap达到一定的程度（负载因子决定），这个时候，HashMap就会扩容。
+
+**根据源码，使用公式表示，是否扩容由容量和负载因子的乘积决定**
+
+```text
+触发扩容的条件：
+HashMap.Size   >=  Capacity * LoadFactor
+```
+
+- HashMap.Size：当前HashMap的实际元素个数
+- Capacity：容量
+- LoadFactor：负载因子
+
+如果在默认值的条件下：
+
+```text
+HashMap.Size   =  16 * 0.75 = 12
+```
+
+也就是，默认的情况下，插入十二个元素的时候，就会触发扩容。
+
+
+
+### 5.3 HashMap扩容步骤
+
+一旦HashMap的size超过了Capacity * LoadFactor乘积，就会触发扩容，那如何扩容呢？，需要经过两步：
+
+- resize：即：创建一个new Entry数组，长度是原来old Entry的2倍。
+- rehash：遍历old Entry数组，把里面的每一个元素取出来重新计算hash和index。为什么要重新计算呢？想一想之前的index计算公式：
+
+```text
+index =  hash值 & （length - 1）
+```
+
+对，因为长度已经改了，所以index肯定会不一样，举个例子：
+
+- 当原数组长度为16时，Hash运算是和1111做与运算；
+- 新数组长度为32，Hash运算是和11111做与运算。
+
+Hash结果显然不同。
+
+
+
+### 5.4
+
+
+
+### 5.5 
+
+
+
+## 6. 
 
 
 
