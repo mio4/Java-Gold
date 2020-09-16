@@ -2,6 +2,10 @@
 
 ## 0x0 基础知识
 
+![](header.png)
+
+
+
 ### 1. 集合体系
 
 Java集合是面试中的重要考点，特别是List和Map接口实现类，属于工作中CRUD最常用的工具，所以经常在面试中出现，用于考察面试者的Java基本功。
@@ -83,27 +87,84 @@ HashMap内部实现细节是面试中最常见的高频考点，除了最基础�
 
 ## 0x1 高频面试题
 
-## 1.
+## 1. Hashmap是如何解决哈希碰撞问题的？
+
+![image-20200916100429192](D:\002-Repository\Java-Gold\09-paper\002\image-20200916100429192.png)
+
+- JDK1.7中，HashMap就是使用哈希表来存储的。哈希表为解决冲突，可以采用开放地址法和链地址法等来解决问题，Java中HashMap采用了**链地址法**。链地址法，简单来说，就是数组加链表的结合。在每个数组元素上都一个链表结构，当数据被Hash后，得到数组下标，把数据放在对应下标元素的链表上。
+- JDK1.8中，链表长度超过8会转换为红黑树，但本质上也是通过在节点上追加生成链表的方式解决哈希冲突。
 
 
 
-## 2.
+## 2. Map接口各个实现类之间的区别？（HashMap、LinkedHashMap、TreeMap）
+
+![image-20200916100853302](D:\002-Repository\Java-Gold\09-paper\002\image-20200916100853302.png)
+
+- Hashtable：**Hashtable是遗留类**，很多映射的常用功能与HashMap类似，不同的是它承自Dictionary类，并且是线程安全的，任一时间只有一个线程能写Hashtable，并发性不如ConcurrentHashMap，因为ConcurrentHashMap引入了分段锁。Hashtable不建议在新代码中使用，不需要线程安全的场合可以用HashMap替换，需要线程安全的场合可以用ConcurrentHashMap替换。
+- LinkedHashMap：LinkedHashMap是HashMap的一个子类，保存了记录的插入顺序，在用Iterator遍历LinkedHashMap时，先得到的记录肯定是先插入的，也可以在构造时带参数，按照访问次序排序。
+- TreeMap：TreeMap实现SortedMap接口，**能够把它保存的记录根据键排序，默认是按键值的升序排序，也可以指定排序的比较器**，当用Iterator遍历TreeMap时，得到的记录是排过序的。如果使用排序的映射，建议使用TreeMap。在使用TreeMap时，key必须实现Comparable接口或者在构造TreeMap传入自定义的Comparator，否则会在运行时抛出java.lang.ClassCastException类型的异常。
+
+总结：使用Iterator迭代器遍历的时候，HashMap的结果是没有排序的，而TreeMap输出的结果是排好序的。
 
 
 
-## 3.
+## 3. HashMap和HashSet的区别？
+
+| HashMap                                     | HashSet                                                      |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| HashMap实现了Map接口                        | HashSet实现了Set接口                                         |
+| HashMap储存键值对                           | HashSet仅仅存储对象                                          |
+| 使用put()方法将元素放入map中                | 使用add()方法将元素放入set中                                 |
+| HashMap中使用键对象来计算hashcode值         | HashSet使用成员对象来计算hashcode值，对于两个对象来说hashcode可能相同，所以equals()方法用来判断对象的相等性，如果两个对象不同的话，那么返回false |
+| HashMap比较快，因为是使用唯一的键来获取对象 | HashSet较HashMap来说比较慢                                   |
 
 
 
-## 4.
+## 4. 红黑树转换相关问题
+
+### 4.1 链表->红黑树，为什么是长度为8的时候发生转换？
+
+- 要弄明白这个问题，我们首先要明白为什么要转换，这个问题比较简单，因为Map中桶的元素初始化是链表保存的，其查找性能是O(n)，而树结构能将查找性能提升到O(log(n))。当链表长度很小的时候，即使遍历，速度也非常快，但是当链表长度不断变长，肯定会对查询性能有一定的影响，所以才需要转成树。
+- **为什么不是一开始就将其转换为TreeNodes？**而是需要一定节点数才转为TreeNodes，说白了就是trade-off，空间和时间的权衡，下面是HashMap的源码注解：
+
+```
+Because TreeNodes are about twice the size of regular nodes, we use them only when bins contain enough nodes to warrant use (see TREEIFY_THRESHOLD). And when they become too small (due to removal or resizing) they are converted back to plain bins. In usages with well-distributed user hashCodes, tree bins are rarely used. Ideally, under random hashCodes, the frequency of nodes in bins follows a Poisson distribution (http://en.wikipedia.org/wiki/Poisson_distribution) with a parameter of about 0.5 on average for the default resizing threshold of 0.75, although with a large variance because of resizing granularity. Ignoring variance, the expected occurrences of list size k are (exp(-0.5) * pow(0.5, k) / factorial(k)). The first values are:
+
+0: 0.60653066
+1: 0.30326533
+2: 0.07581633
+3: 0.01263606
+4: 0.00157952
+5: 0.00015795
+6: 0.00001316
+7: 0.00000094
+8: 0.00000006
+more: less than 1 in ten million
+```
+
+- 理想情况下，在随机哈希代码下，桶中的节点频率遵循泊松分布，文中给出了桶长度k的频率表。 由频率表可以看出，桶的长度超过8的概率非常非常小。所以作者应该是根据概率统计而选择了8作为阀值，由此可见，这个选择是非常严谨和科学的。
+- 另外需要注意的一点是：**链表长度达到8就转成红黑树，当长度降到6就转成普通节点。**
+
+- 总结：
+  - TreeNodes占用空间是普通Nodes的两倍，为了空间和时间的权衡，为6时红黑树也比链表快，但转换过程消耗和空间消耗不划算
+  - 节点的分布频率会遵循泊松分布，链表长度达到8个元素的概率为0.00000006，几乎是不可能事件
+  - 提出来回转化的阈值8和6阈值为什么不一样？**至于为什么转化为红黑树的阈值8和转化为链表的阈值6不一样，是为了避免频繁来回转化**
+
+### 4.2 既然存在链表转换为红黑树，那么是否存在红黑树转换为链表？
+
+HashMap在jdk1.8之后引入了红黑树的概念，表示若桶中链表元素超过8时，会自动转化成红黑树；若桶中元素小于等于6时，树结构还原成链表形式。
+
+- 红黑树的平均查找长度是log(n)，长度为8，查找长度为log(8)=3，链表的平均查找长度为n/2，当长度为8时，平均查找长度为8/2=4，这才有转换成树的必要；链表长度如果是小于等于6，6/2=3，虽然速度也很快的，但是转化为树结构和生成树的时间并不会太短。
+- 还有选择6和8的原因是：
+  - 中间有个差值7可以防止链表和树之间频繁的转换。假设一下，如果设计成链表个数超过8则链表转换成树结构，链表个数小于8则树结构转换成链表，如果一个HashMap不停的插入、删除元素，链表个数在8左右徘徊，就会频繁的发生树转链表、链表转树，效率会很低。
 
 
 
-## 5.
+## 5. HashMap的负载因子是什么？
 
 
 
-## 6.
+## 6. HashMap扩容相关问题
 
 
 
@@ -150,3 +211,5 @@ https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/
 https://blog.csdn.net/qq_36520235/article/details/82417949
 
 https://blog.csdn.net/carson_ho/article/details/79373134
+
+https://www.cnblogs.com/twoheads/p/10667449.html

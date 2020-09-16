@@ -127,7 +127,7 @@
 # 面试炼金系列
 
 - [Java面试炼金系列 (1)   | 关于String类的常见面试题剖析](09-paper/001/01-String.md) 
-- Java面试炼金系列(2)   | Map接口、HashMap类的常见面试题剖析
+- [Java面试炼金系列(2)   | Map接口、HashMap类的常见面试题剖析](09-paper/002/02-Map.md)
 - Java面试炼金系列(3)   | Java集合知识体系总结
 - Java面试炼金系列(4)   | I/O 高频面试题剖析
 
