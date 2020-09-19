@@ -225,25 +225,136 @@ Hash结果显然不同。
 
 
 
-### 5.4
+### 5.4 为何HashMap的数组长度一定是2的次幂？
+
+首先从HashMap的`hash`函数说起：
+
+1. `hash`函数：
+
+   ```java
+   对key的hashcode进一步进行计算以及二进制位的调整等来保证最终获取的存储位置尽量分布均匀*/
+   final int hash(Object k) {
+           int h = hashSeed;
+           if (0 != h && k instanceof String) {
+               return sun.misc.Hashing.stringHash32((String) k);
+           }
+   
+           h ^= k.hashCode();
+   
+           h ^= (h >>> 20) ^ (h >>> 12);
+           return h ^ (h >>> 7) ^ (h >>> 4);
+       }
+   //例如计算得到哈希值为12345678910111213
+   ```
+
+2. `indexFor`函数：
+
+   ```java
+   static int indexFor(int h, int length) {
+           return h & (length-1);
+       }
+   //返回得到的数组下标为：123456
+   ```
+
+   h&（length-1）保证获取的index一定在数组范围内，举个例子，默认容量16，length-1=15，h=18,转换成二进制计算为index=2。位运算对计算机来说，性能更高一些（HashMap中有大量位运算）
+
+   所以最终存储位置的确定流程是这样的：
+
+![HashMap如何确定元素位置](index.png)
+
+3. `resize` 函数：
+
+   ```java
+   void resize(int newCapacity) {
+           Entry[] oldTable = table;
+           int oldCapacity = oldTable.length;
+           if (oldCapacity == MAXIMUM_CAPACITY) {
+               threshold = Integer.MAX_VALUE;
+               return;
+           }
+   
+           Entry[] newTable = new Entry[newCapacity];
+           transfer(newTable, initHashSeedAsNeeded(newCapacity));
+           table = newTable;
+           threshold = (int)Math.min(newCapacity * loadFactor, MAXIMUM_CAPACITY + 1);
+       }
+   ```
+
+   如果数组进行扩容，数组长度发生变化，而存储位置 index = h&(length-1),index也可能会发生变化，需要重新计算index。
+
+   HashMap的数组长度一定保持2的次幂，比如16的二进制表示为 10000，那么length-1就是15，二进制为01111，同理扩容后的数组长度为32，二进制表示为100000，length-1为31，二进制表示为011111。**这样会保证低位全为1，而扩容后只有一位差异，也就是多出了最左位的1，这样在通过 h&(length-1)的时候，只要h对应的最左边的那一个差异位为0，就能保证得到的新的数组索引和老数组索引一致(大大减少了之前已经散列良好的老数组的数据位置重新调换)。**
+
+   
+
+## 6. 简述一下HashMap中put方法的实现
+
+JDK1.8在JDK1.7的基础上针对增加了红黑树来进行优化。即当链表超过8时，链表就转换为红黑树，利用红黑树快速增删改查的特点提高HashMap的性能，其中会用到红黑树的插入、删除、查找等算法。
+
+具体的实现流程如下：
+
+![](map3.png)
 
 
 
-### 5.5 
+
+
+## 7. ConcurrentHashMap有啥用？谈下你的理解
+
+这个问题要从两个方面来回答：
+
+1. 为什么要用ConcurrentHashMap？
+2. ConcurrentHashMap如何保证并发安全？
 
 
 
-## 6. 
+### 7.1 为什么要用ConcurrentHashMap？
+
+​	HashMap线程不安全，而Hashtable是线程安全，但是它使用了synchronized进行方法同步，插入、读取数据都使用了synchronized，当插入数据的时候不能进行读取（相当于把整个Hashtable都锁住了，全表锁），当多线程并发的情况下，都要竞争同一把锁，导致效率极其低下。而在JDK1.5后为了改进Hashtable的痛点，ConcurrentHashMap应运而生。
 
 
 
-## 7.
+### 7.2 ConcurrentHashMap如何保证并发安全？
+
+以JDK1.8 版本分析：
+
+```java
+/**
+ * The array of bins. Lazily initialized upon first insertion.
+ * Size is always a power of two. Accessed directly by iterators.
+ * 
+ * hash表，在第一次put数据的时候才初始化
+ */
+transient volatile Node<K,V>[] table;
+
+/**
+ * 用来存储一个键值对
+ * 
+ * Key-value entry.  This class is never exported out as a
+ * user-mutable Map.Entry (i.e., one supporting setValue; see
+ * MapEntry below), but can be used for read-only traversals used
+ * in bulk tasks.  Subclasses of Node with a negative hash field
+ * are special, and contain null keys and values (but are never
+ * exported).  Otherwise, keys and vals are never null.
+ */
+static class Node<K,V> implements Map.Entry<K,V> {
+    final int hash;
+    final K key;
+    volatile V val;
+    volatile Node<K,V> next;
+}
+```
+
+JDK8中不在使用Segment的概念，**而是采用了 `CAS + synchronized` 来保证并发安全。**
+
+数据结构类似下图：
+
+![](concurrenthashmap.jpg)
 
 
 
-## 8.
+同理，可按照分析HashMap的方式来分析PUT和GET函数，不做多述。
 
-
+相关引申问题：volatile关键词的作用？
 
 
 
@@ -284,3 +395,7 @@ https://blog.csdn.net/carson_ho/article/details/79373134
 https://www.cnblogs.com/twoheads/p/10667449.html
 
 https://zhuanlan.zhihu.com/p/86001720
+
+https://www.jianshu.com/p/d10256f0ebea
+
+https://juejin.im/post/6844903813892014087#heading-4
