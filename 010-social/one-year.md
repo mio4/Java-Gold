@@ -74,7 +74,7 @@
 
 最好的办法就是从毕业开始就认清现实，按步执行计划。
 
-PS：最近在看的，质量比较高的书单：
+PS：最近在看的，质量比较高的书单：https://github.com/mio4/Java-Gold/blob/master/010-social/%E6%8A%80%E6%9C%AF%E4%B9%A6%E5%8D%95.pdf
 
 
 
