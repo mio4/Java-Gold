@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			onload=function(){
+				//给单选按钮派发事件
+				document.getElementById("toRight1").onclick = function(){
+					var arr = document.getElementById("left").options; //得到select元素所有的选项
+					//alert(arr);
+					//alert(arr.length);
+					for(var i=0;i < arr.length; i++){
+						if(arr[i].selected){
+							document.getElementById("right").appendChild(arr[i]);
+						}
+					}
+				}
+				
+				//给全选按钮派发事件
+				document.getElementById("toRight3").onclick = function(){
+					var arr = document.getElementById("left").options;
+					for(var i=0; i < arr.length;){
+						document.getElementById("right").appendChild(arr[i]);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					<select id="left" multiple="true" style="width:100px" size="10">
+						<option>環</option>
+						<option>芈</option>
+						<option>琅</option>
+						<option>琊</option>
+						<option>爨</option>
+						<option>甄</option>
+						<option>槑</option>
+						<option>夔</option>
+					</select>
+				</td>
+				<td>
+					<input type="button" value=">" id="toRight1"><br>
+					<input type="button" value=">>" id="toRight2"><br>
+					<input type="button" value=">>>" id="toRight3"><br><br>
+					<input type="button" value="<" id="toLeft1"><br>
+					<input type="button" value="<<" id="toLeft2"><br>
+					<input type="button" value="<<<" id="toLeft3">
+				</td>
+				<td>
+					<select id="right" multiple="true" style="width:100px" size="10">
+						
+					</select>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

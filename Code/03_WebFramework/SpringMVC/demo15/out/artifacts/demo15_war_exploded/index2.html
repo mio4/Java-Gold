@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/json2.js"></script>
+    <script>
+        $(document).ready(function(){
+            testResponseBody();
+        });
+
+        function testResponseBody(){
+            //.post()是jQuery中的方法，文档：http://api.jquery.com/jQuery.post/
+            //url：请求发送的路径
+            //data：null:发送的data为空
+            //success:function(data){} 请求成功后的回调函数
+            //dataType:"json" 期望从服务器传来的数据u
+            $.post("json/testResponseBody",null,
+                function(data){
+                    $.each(data,function(){//遍历JSON
+                        var tr = $("<tr align='center'/>"); //新建一行
+                        $("<td/>").html(this.id).appendTo(tr); //将<td>id</td>插入tr
+                        $("<td/>").html(this.name).appendTo(tr);
+                        $("<td/>").html(this.author).appendTo(tr);
+                        $("#bookTable").append(tr); //插入tr
+                    })
+                },"json");
+        }
+    </script>
+</head>
+<body>
+<table id="bookTable" border="1" style="border-collapse:collapse;">
+    <tr align="center">
+        <th>编号</th>
+        <th>书名</th>
+        <th>作者</th>
+    </tr>
+</table>
+</body>
+</html>

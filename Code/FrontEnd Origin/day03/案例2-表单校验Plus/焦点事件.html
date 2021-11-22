@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function getFocus(){
+				var username = document.getElementById("username");
+				//alert(username.value);
+				document.getElementById("span_1").innerHTML=username.value;
+			}
+			
+			function loseFocus(){
+				var username = document.getElementById("username");
+				alert(username.value);
+			}
+		</script>
+	</head>
+	<body>
+		用户名：<input name=""  id="username" value="mio"/ onfocus="getFocus()" onblur="loseFocus()"><br />
+		<span id="span_1">before</span>
+	</body>
+</html>

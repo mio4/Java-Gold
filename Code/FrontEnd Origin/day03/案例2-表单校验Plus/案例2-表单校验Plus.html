@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="#" method="get" onsubmit="return checkForm()">
+			<table border="1px">
+				<tr>
+					<td colspan="3" align="center">会员注册</td>
+				</tr>
+				<tr>
+					<td>用户名：</td>
+					<td><input type="text" name="username" id="username" onblur="loseFocus(this.value)"/></td>
+					<td><span id="username_msg"></span></td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td><input type="password" name="password" id="password"/></td>
+					<td><span id="password_msg"></span></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr><td align="center" colspan="3"><input type="submit" value="提交"/></td></tr>
+			</table>
+		</form>	
+	</body>
+	
+	<script>
+		function checkForm(){
+			var flag = true;
+			var usernameObj = document.getElementById("username");
+			var passwordObj = document.getElementById("password");
+			var username = usernameObj.value;
+			var password = passwordObj.value;
+			//alert(username + ":" + password);
+			//校验数据
+			if(username == null || username == ""){
+				var username_msgObj = document.getElementById("username_msg");
+				//username_msgObj.innerHTML  = "用户名不能为空";
+				username_msgObj.innerHTML = "<font color='#00FFFF'>用户名不能为空</font>";
+				flag = false;
+				return flag;
+			} else{
+				var username_msgObj = document.getElementById("username_msg");
+				username_msgObj.innerHTML="";
+			}
+			if(password == null || password == ""){
+				var password_msgObj = document.getElementById("password_msg");
+				password_msgObj.innerHTML = "密码不能为空";
+				password_msgObj.style.color="red";
+				flag = false;
+				return flag;
+			}
+		}
+		
+		//function 1
+		/*function loseFocus(){ 
+			//获取标签内容
+			var usernameValue = document.getElementById("username").value;
+			if(usernameValue == ""){
+				var username_msgObj = document.getElementById("username_msg");
+				username_msgObj.innerHTML = "<font color='#00FFFF'>用户名不能为空</font>";
+			}else{
+				var username_msgObj = document.getElementById("username_msg");
+				username_msgObj.innerHTML = "";
+			}
+		}*/
+		
+		//function2
+		/*function loseFocus(obj){
+			alert(obj.value);
+		}*/
+		
+		function loseFocus(obj){
+			alert(obj);
+		}
+	</script>
+</html>

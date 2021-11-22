@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mio4.domain.User" table="user">
+        <id name="id" column="id">
+            <!--
+                increment:获取数据库主键的max，max+1之后返回
+            -->
+            <generator class="increment"/>
+        </id>
+
+        <!--乐观锁-->
+        <version name="version"/>
+
+        <property name="name" column="name" length="30"/>
+        <property name="age" column="age"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#btn1").click(function(){
+					$("body div").css("background-color","#BCD68D");
+				});				
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" value="选择 body内的所有div元素." id="btn1"/>
+		<div class="one" id="one" >
+ 			id为one,class为one的div
+      		<div class="mini">class为mini</div>
+  		</div>
+	</body>
+</html>

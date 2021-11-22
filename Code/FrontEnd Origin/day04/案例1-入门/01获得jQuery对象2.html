@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.min.js">
+			
+		</script>
+		<script>
+			//通过原生JS
+			onload = function(){
+				var username = document.getElementById("username");
+				alert(username.value);
+				
+				//通过jQuery
+				//var $user = $("#username");
+				var $user = jQuery("#username");
+				alert($user.val());
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="username" value="mio"/>
+	</body>
+</html>

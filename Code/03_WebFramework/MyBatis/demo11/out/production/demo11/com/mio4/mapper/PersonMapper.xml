@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mio4.mapper.PersonMapper">
+<select id="SelectPersonById" parameterType="int" resultMap="personMapper">
+        SELECT * FROM TB_PERSON WHERE id = #{id}
+    </select>
+<!--因为Person中有一个Card对象，需要同时查询tb_card表才能实现完整的查询-->
+<!--使用resultMap-->
+<resultMap id="personMapper" type="com.mio4.domain.Person">
+    <id property="id" column="id"/>
+    <result property="name" column="name"/>
+    <result property="sex" column="sex"/>
+    <result property="age" column="age"/>
+    <!--配置Card 一对一映射-->
+    <association property="card" column="card_id" select="com.mio4.mapper.CardMapper.SelectCardById" javaType="com.mio4.domain.Card"/>
+</resultMap>
+
+</mapper>

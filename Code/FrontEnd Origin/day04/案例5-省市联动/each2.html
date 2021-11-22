@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#b1").click(function(){
+					//alert($("input:hidden").size());
+					
+					$("input:hidden").each(function(index,dom){
+						//alert($(this).val());
+						
+						alert(index);
+						alert(dom.value);
+					})
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value=" 选取所有的文本隐藏域, 并打印它们的值"  id="b1"/>
+		<input type="button" value=" 选取所有的文本隐藏域, 并打印它们的值"  id="b2"/>
+		<br /><br />
+		  
+		  <!--文本隐藏域-->
+		<input type="hidden" value="hidden_1">
+		<input type="hidden" value="hidden_2">
+		<input type="hidden" value="hidden_3">
+		<input type="hidden" value="hidden_4">
+	</body>
+</html>

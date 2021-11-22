@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <!--这是一条注释-->
+    <bean id="a" class="com.mio4.web">a bean</bean>
+    <bean>No attributes</bean>
+    <bean>
+        测试&lt;a&gt;标签
+    </bean>
+    <bean>
+        <![CDATA[
+            这是中间的<a>标签
+        ]]>
+
+        <![CDATA[]]>
+    </bean>
+</beans>
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean标签-->
+    <bean id="userService" class="com.mio4.demo2.UserServiceImpl" init-method="init" destroy-method="destroy">
+        <property name="name" value="mio from di"/>
+    </bean>
+
+    <!--依赖注入-->
+    <bean id="customerDao" class="com.mio4.demo3.CustomerDaoImpl">
+
+    </bean>
+    <bean id="customerService" class="com.mio4.demo3.CustomerServiceImpl">
+        <property name="customerDao" ref="customerDao"/>
+    </bean>
+
+
+    <!--构造方法的注入方式-->
+    <bean id="Car1" class="com.mio4.demo4.Car1">
+        <!--<constructor-arg name="cname" value="benz"/>
+        <constructor-arg name="price" value="200000"/>-->
+        <constructor-arg index="0" value="porsche"/>
+        <constructor-arg index="1" value="1000000"/>
+    </bean>
+
+    <!--引用求值-->
+    <bean id="Person" class="com.mio4.demo4.Person">
+        <constructor-arg name="pname" value="mio"/>
+        <constructor-arg name="car1" ref="Car1"/>
+    </bean>
+
+    <!--Setter的注入方式-->
+    <!--<bean id="Car2" class="com.mio4.demo4.Car2">
+        <property name="cname" value="mustang"/>
+        <property name="price" value="1" />
+    </bean>-->
+
+    <!--p名称空间的注入-->
+    <!--<bean id="Car2" class="com.mio4.demo4.Car2" p:cname="zzz" p:price="1000000"></bean>-->
+
+    <!--使用SpEL表达式注入-->
+    <bean id="Car2" class="com.mio4.demo4.Car2">
+        <property name="cname" value="#{'mustang'}"/>
+        <property name="price" value="#{45}"/>
+    </bean>
+
+
+   <!-- &lt;!&ndash;关于集合的注入&ndash;&gt;
+    <bean id="User" class="com.mio4.demo4.User">
+        <property name="arr">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="list">
+            <list>
+                <value>l1</value>
+                <value>l2</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="k1" value="v1"></entry>
+            </map>
+        </property>
+
+        <property name="pro">
+            <props>
+                <prop key="username">root</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
+    </bean>-->
+
+    <!--<import resource="com/mio4/demo6/applicationContext2.xml"/>-->
+</beans>

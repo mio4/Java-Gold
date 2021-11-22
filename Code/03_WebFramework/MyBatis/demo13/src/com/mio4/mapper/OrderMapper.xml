@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mio4.mapper.OrderMapper">
+    <select id="selectOrderByUserId" resultMap="orderResultMap">
+        SELECT * FROM TB_ORDER WHERE user_id = #{id}
+    </select>
+    <resultMap id="orderResultMap" type="com.mio4.domain.Order">
+        <id property="id" column="id"/>
+        <result property="code" column="code"/>
+        <result property="total" column="total"/>
+        <association property="user" javaType="com.mio4.domain.User">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+            <result property="loginname" column="loginname"/>
+            <result property="password" column="password"/>
+            <result property="phone" column="phone"/>
+            <result property="address" column="address"/>
+        </association>
+        <collection property="articles" javaType="ArrayList" column="oid"
+                    ofType="com.mio4.domain.Article" select="com.mio4.mapper.ArticleMapper.selectArticleByOrderId"
+                    fetchType="lazy">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+            <result property="price" column="price"/>
+            <result property="remark" column="remark"/>
+        </collection>
+    </resultMap>
+
+    <!--根据订单id查询订单-->
+    <select id="selectOrderById" parameterType="int" resultMap="orderResultMap">
+        SELECT u.*,o.id AS oid,code,total,user_id
+        FROM TB_USER u, TB_ORDER o
+        WHERE u.id = o.user_id
+        AND o.id = #{id}
+    </select>
+
+</mapper>

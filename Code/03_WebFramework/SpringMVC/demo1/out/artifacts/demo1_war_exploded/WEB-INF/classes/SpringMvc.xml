@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.2.xsd">
+
+    <!-- 使用注解开发，不用配置controller，需要配置一个组件扫描器 -->
+    <context:component-scan base-package="com.mio4.controller"/>
+
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <!-- 视图解析器 -->
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--&lt;!&ndash; 配置从项目根目录到指定目录一端路径 ,建议指定浅一点的目录&ndash;&gt;-->
+        <!--<property name="prefix" value="/WEB-INF/jsp/"></property>-->
+        <!--&lt;!&ndash; 文件的后缀名 &ndash;&gt;-->
+        <!--<property name="suffix" value=".jsp"></property>-->
+    <!--</bean>-->
+</beans>

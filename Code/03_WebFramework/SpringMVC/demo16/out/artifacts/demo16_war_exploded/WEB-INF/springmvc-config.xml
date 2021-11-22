@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <!--开启注解扫描-->
+    <context:component-scan base-package="com.mio4"/>
+    <!--配置注解驱动：-->
+    <!--自动配置最新的处理映射器和处理器适配器-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--限制上传文件大小/字节(10MB)-->
+        <property name="maxUploadSize">
+            <value>10485760</value>
+        </property>
+        <!--请求编码格式，和JSP/HTML页面pageEncoding相同-->
+        <property name="defaultEncoding">
+            <value>UTF-8</value>
+        </property>
+    </bean>
+
+    <!--配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="content/"/>
+        <!--<property name="order" value="2"/>-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="prefix" value="content/"/>-->
+        <!--<property name="order" value="3"/>-->
+        <!--<property name="suffix" value=".html"/>-->
+    <!--</bean>-->
+
+
+</beans>

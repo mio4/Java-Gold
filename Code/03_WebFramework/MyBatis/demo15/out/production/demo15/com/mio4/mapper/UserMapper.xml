@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mio4.mapper.UserMapper">
+    <cache eviction="LRU" flushInterval="60000" size="512" readOnly="true"/>
+    <select id="selectUserById" parameterType="int" resultType="com.mio4.domain.User" useCache="false">
+        SELECT * FROM TB_USER WHERE id = #{id}
+    </select>
+
+    <select id="selectAllUser" resultType="com.mio4.domain.User">
+        SELECT * FROM TB_USER
+    </select>
+
+    <delete id="deleteUserById" parameterType="int">
+        DELETE FROM TB_USER WHERE id = #{id}
+    </delete>
+
+    <!--测试-->
+    <select id="selectUserByAge" parameterType="int" resultType="com.mio4.domain.User">
+        SELECT * FROM TB_USER WHERE age = #{age}
+    </select>
+
+</mapper>

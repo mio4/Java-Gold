@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mio4.mapper.UserMapper">
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.mio4.pojo.User">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="findUserByUsername" parameterType="java.lang.String" resultType="com.mio4.pojo.User">
+           select * from user where username like '%${value}%';
+    </select>
+
+    <update id="updateUserById" parameterType="com.mio4.pojo.User">
+        update user set username = #{username} where id = #{id};
+    </update>
+</mapper>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="e1" style="width:200px ; height: 200px; background-color: #f00;">
+			<div id="e2" style="width:100px ; height: 100px; background-color: #0f0;"></div>
+		</div>
+		
+		<hr />
+		
+		<div id="e3" style="width:200px ; height: 200px; background-color: #f00;">
+			<div id="e4" style="width:100px ; height: 100px; background-color: #0f0;"></div>
+		</div>
+		
+		<script type="text/javascript">
+			var e1 = document.getElementById("e1");
+			var e2 = document.getElementById("e2");
+			var e3 = document.getElementById("e3");
+			var e4 = document.getElementById("e4");
+			
+			e1.onclick = function(){
+				alert("我是外边的div:儿子,我感受到你被点了.");
+			}
+			e2.onclick = function(){
+				alert("我是里面的div:我被点了,爹爹,你感觉咋样?");
+			}
+			
+			e3.onclick = function(){
+				alert(".........");
+			}
+			e4.onclick = function(event){
+				alert("我是里面的div:我又被点了,爹爹,你还能感觉到吗?");
+				var event = event || window.event;
+				event.stopPropagation();
+			}
+		</script>
+		
+		
+	</body>
+</html>

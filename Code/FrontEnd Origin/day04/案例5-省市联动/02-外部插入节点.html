@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>02_外部插入节点.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//获取两个元素
+			var $city=$("#city");
+			var $p2=$("#p2");
+			
+		//1.在 p2 的后面插入 city
+	//	$p2.after($city);
+		
+		//2.在 p2 的前面插入 city
+		$p2.before($city);
+		
+		});
+	</script>
+	</head>
+	 
+	<body>
+		 <ul id="city">
+		 	 <li id="bj" name="beijing">北京</li>
+			 <li id="tj" name="tianjin">天津</li>
+			 <li id="cq" name="chongqing">重庆</li>
+		 </ul>
+		
+		 <p  id="p3">I would like to say: p3</p>
+		 
+		 <p  id="p2">I would like to say: p2</p>
+		
+		 <p  id="p1">I would like to say: p1</p>
+       
+	</body>
+<script type="text/javascript">
+	
+</script>
+   
+</html>
+
+
+

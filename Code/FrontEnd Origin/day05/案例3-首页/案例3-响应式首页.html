@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="../css/bootstrap.css" />
+		<script src="../js/jquery-1.11.0.js"></script>
+		<script src="../js/bootstrap.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!--logo-->
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12" style="height:80px">
+					<img src="../img/logo2.png"/>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12"style="height:45px">
+					<img src="../img/header.jpg"/>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12"style="height:45px">
+<!--					<ul class="list-inline">
+						<li style="padding-top:20px;"><a href="#">登录</a></li>
+						<li style="padding-top:20px;"><a href="#">注册</a></li>
+						<li style="padding-top:20px;"><a href="#">购物车</a></li>	
+					</ul>-->
+				<a href="#"><button type="button" class="btn btn-primary " style="margin:10px">登录</button></a>
+				<a href="#"><button type="button" class="btn btn-primary " style="margin:10px">注册</button></a>
+				<a href="#"><button type="button" class="btn btn-primary " style="margin:10px">购物车</button></a>
+				</div>
+			</div>
+			
+			<!--导航-->
+			<div class="row">
+				<nav class="navbar navbar-inverse">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="#">JavaWeb</a>
+				    </div>
+				
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+				        <li class="active"><a href="#">JavaSE<span class="sr-only">(current)</span></a></li>
+				        <li><a href="#">FrontEnd</a></li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other<span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">HTML</a></li>
+				            <li><a href="#">CSS</a></li>
+				            <li><a href="#">Javascript</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#">something more</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#">...</a></li>
+				          </ul>
+				        </li>
+				      </ul>
+				      <form class="navbar-form navbar-left">
+				        <div class="form-group">
+				          <input type="text" class="form-control" placeholder="Search">
+				        </div>
+				        <button type="submit" class="btn btn-default">Submit</button>
+				      </form>
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="#">Link</a></li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				          </ul>
+				        </li>
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>					
+			</div>
+			<!--轮播-->
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
+			
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="../img/1.jpg" alt="...">
+			      <div class="carousel-caption">
+			        	第一张图片
+			      </div>
+			    </div>
+			    <div class="item">
+			      <img src="../img/2.jpg" alt="..." >
+			      <div class="carousel-caption">
+			        	第二张图片
+			      </div>
+			    </div>
+			    <div class="item">
+			      <img src="../img/3.jpg" alt="..." >
+			      <div class="carousel-caption">
+			        	第三张图片
+			      </div>
+			    </div>			    
+			   		 选择你的图片
+			  </div>
+			
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>						
+			<!--最新商品-->
+			<!--最重要的部分：-->
+			<div class="row">
+				<div class="row">
+					<span class="h2" style="padding-left:30px">最新商品</span>
+					<img src="../img/title2.jpg" />
+				</div>
+				<div class="col-md-2 hidden-sm hidden-xs" style="height:400px">
+					<img src="../img/big01.jpg" />
+				</div>
+				<div class="col-md-10 col-sm-12" style="height:400px">
+					<div class="col-md-6 col-sm-12 hidden-xs">
+						<img src="../img/middle01.jpg" style="height:200px"/>						
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<img src="../img/small08.jpg" />
+					</div>	
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<img src="../img/small08.jpg" />
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<img src="../img/small08.jpg" />
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<img src="../img/small08.jpg" />
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<img src="../img/small08.jpg" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

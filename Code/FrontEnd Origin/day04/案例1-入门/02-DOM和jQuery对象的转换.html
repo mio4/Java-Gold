@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+	<script src="../js/jquery-1.11.0.min.js"></script>
+<body>
+	<input type="text" id="username" value="jack"/>
+</body>
+	<script>
+		//dom >>>>jquery   $(dom对象)
+		//1.获取dom对象
+		//var obj=document.getElementById("username");
+		//2.转化
+		//var $user=$(obj);
+		//alert($user.val());
+		//alert($user.value);错误的
+		
+		//jquery>>>>dom
+		//1.获取jquery独享
+		var $u=$("#username");
+		//2.转换
+		//2.1 方式1 
+		//var obj=$u.get(0);
+		
+		//2.2 方式2
+		var obj = $u[0];
+		alert(obj.value);
+		
+		
+	</script>
+</html>

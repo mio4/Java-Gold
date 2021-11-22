@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       					   http://www.springframework.org/schema/beans/spring-beans.xsd
+       					   http://www.springframework.org/schema/context 
+       					   http://www.springframework.org/schema/context/spring-context.xsd
+       					   http://www.springframework.org/schema/tx 
+       					   http://www.springframework.org/schema/tx/spring-tx.xsd
+       					   http://www.springframework.org/schema/aop 
+       					   http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 1 配置数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ee1201_spring_day03"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+
+
+	<!-- 2.配置 sessionFactory 
+		* dataSource :数据源
+		* hibernateProperties : hibernate其他属性配置
+		* 映射
+			mappingLocations:支持通配符
+				<property name="mappingLocations" value="classpath:cn/itcast/domain/User.hbm.xml">
+				<property name="mappingLocations" value="classpath:cn/itcast/*/*.hbm.xml">
+			mappingResources：不支持通配符，如果需要多个只能配置<array>
+				<property name="mappingResources" value="cn/itcast/domain/User.hbm.xml">
+		
+	-->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key=""></prop>
+			</props>
+		</property>
+		<property name="mappingLocations" value="classpath:cn/itcast/domain/*.hbm.xml"></property>
+	</bean>
+	
+	<!-- 3 配置dao ,将sessionFactory注入dao，底层设置父类HibernateDaoSupport，底层将通过SessionFactory创建HibernateTemplate模板-->
+	<bean id="userDao" class="cn.itcast.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 4 配置service -->
+	<bean id="userService" class="cn.itcast.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<!-- 5 事务管理 -->
+	<!-- 5.1 事务管理器,hibernate 事务从session获得，session从sessionFactory获得 -->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 5.2事务详情 ：给ABC进行不同的事务详细设置-->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="add*"/>
+			<tx:method name="update*"/>
+			<tx:method name="delete*"/>
+			<tx:method name="find*" read-only="true"/> <!-- 查询只读即可 -->
+		</tx:attributes>
+	</tx:advice>
+	<!-- 5.3 aop编程：从ABCD，筛选ABC-->
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.itcast.service.impl.UserServiceImpl.*(..))"/>
+	</aop:config>
+	
+	
+	
+	
+	
+	
+
+</beans>

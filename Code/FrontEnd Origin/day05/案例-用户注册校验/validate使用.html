@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.js"></script>
+		<!--validate校验库-->
+		<script src="../js/jquery.validate.js"></script>
+		<!--国际化库，中文提示-->
+		<script src="../js/messages_zh.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$("#formId").validate({
+					rules:{
+						username:"required",
+						password:{
+							required:true,
+							digits:true
+						},
+						repassword:{
+							equalTo:"[name='password']"
+						},
+						zuixiaozhi:{
+							min:10
+						},
+						shuzhiqujian:{
+							range:[5,10]
+						}
+					},
+					messages:{
+						username:"用户名不能为空"	,
+						password:{
+							required:"密码不能为空",
+							digits:"密码只能是数字"
+						},
+						zuixiaozhi:{
+							min:"最小值应该大于{0}"
+						},
+						shuzhiqujian:{
+							
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	<body> 
+		<form id="formId" action="" method="get">
+			必填：<input type="text" name="username"/> <br/>
+			必填数字：<input type="text" name="password"/> <br />
+			必填重复：<input type="text" name="repassword"/> <br />
+			最小值：<input type="text" name="zuixiaozhi"/> <br />
+			区间：<input type="text" name="shuzhiqujian"/> <br />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

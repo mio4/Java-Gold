@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>09-表单选择器.html</title>
+ <!--   引入jQuery -->
+ <script src="../js/jquery-1.11.0.min.js"></script>
+ <script src="../js/assist.js"></script>
+ <link rel="stylesheet" type="text/css" href="../css/style.css" /> 
+ <script type="text/javascript">
+/* 	$(function(){
+ 		$("#btn1").click(function(){
+ 			//alert($("#form1 :input").size());
+ 			//alert($("#form1 :input").length);
+ 			alert($("#form1 input").size());
+ 		});
+ 	});*/
+ 	
+ 	/*$(function(){
+ 		$("#btn1").click(function(){
+ 			alert($("#form :input").size());
+ 		});
+ 	});*/
+ 	
+ 	$(function(){
+ 		$("#btn1").click(function(){
+ 			alert($("#form1 :input").size());
+ 		});
+ 	});
+ </script>
+</head>
+<body>
+  <input type="button" value="选取所有的表单子元素" id="btn1"/><br />
+	
+  <form id="form1" action="#">
+    <input type="button" value="Button"/><br/>
+    <input type="checkbox" name="c"/>1<input type="checkbox" name="c"/>2<input type="checkbox" name="c"/>3<br/>
+    <input type="file" /><br/>
+    <input type="hidden" /><br/>
+    <input type="image" src="1.jpg"/><br/>
+    <input type="password" /><br/>
+    <input type="radio" name="a"/>1<input type="radio" name="a"/>2<br/>
+    <input type="reset" /><br/>
+    <input type="submit" value="提交"/><br/>
+    <input type="text" /><br/>
+    <select><option>Option</option></select><br/>
+    <textarea rows="5" cols="20"></textarea><br/>
+    <button>Button</button><br/>
+  </form>
+ 
+  <div></div>
+</body>
+</html>

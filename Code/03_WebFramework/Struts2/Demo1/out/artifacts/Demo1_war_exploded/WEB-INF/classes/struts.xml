@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">-->
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!--常量的编写-->
+<!--    <constant name="struts.action.extension" value="do,,"></constant>-->
+
+    <package name="default" namespace="/" extends="struts-default">
+        <!--配置Action-->
+        <action name="Hello" class="com.mio4.action.HelloAction" method="sayHello">
+            <!-- 配置跳转页面 -->
+            <result name="ok">/demo1/success.jsp</result>
+        </action>
+
+        <!-- POJO -->
+        <action name="demo1Action" class="com.mio4.action1.Demo1Action" method="execute">
+
+        </action>
+
+        <!--实现Action接口-->
+        <action name="demo2Action" class="com.mio4.action1.Demo2Action" method="execute">
+            <result name="success">/demo1/success.jsp</result>
+        </action>
+
+    </package>
+
+    <!--xml文件的分包管理-->
+    <!--<include file="com/mio4/user/struts_user.xml" />-->
+
+</struts>

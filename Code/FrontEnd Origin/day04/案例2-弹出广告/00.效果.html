@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		
+		div{
+			border:1px solid #000;
+			width:100px;
+			height:100px;
+		}
+	</style>
+	<!-- 导入js库 ，注意：使用src属性之后，标签体中不能写入内容-->
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//藏b1div
+			$("#b1").click(function(){
+				//$("#b1Div").hide(1000);
+				//$("#b1Div").hide();
+				
+				//切换
+				$("#b1Div").toggle(1000);
+			});
+			
+			
+			//滑出/滑入b2Div
+			$("#b2").click(function(){
+				//$("#b2Div").slideUp(2000);
+				$("#b2Div").slideToggle(1000);
+			});
+			
+			//出/淡入b3Div
+			$("#b3").click(function(){
+				$("#b3Div").fadeOut(1000);
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" id="b1" value="显示/隐藏 b1Div" />
+	<div id="b1Div"></div> <br/>
+	<input type="button" id="b2" value="滑出/滑入b2Div"/>
+	<div id="b2Div"></div> <br/>
+	<input type="button" id="b3" value="淡出/淡入b3Div" />
+	<div id="b3Div"></div>
+		
+</body>
+</html>

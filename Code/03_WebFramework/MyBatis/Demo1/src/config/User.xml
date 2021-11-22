@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test">
+    <!--id:标注SQL语句-->
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.mio4.pojo.User">
+        select * from user where id = #{id}
+    </select>
+
+    <!--字符串拼接只能使用${value}不是其他-->
+    <select id="findUserByUsername" parameterType="java.lang.String" resultType="com.mio4.pojo.User">
+           select * from user where username like '%${value}%';
+    </select>
+
+    <update id="updateUserById" parameterType="com.mio4.pojo.User">
+        update user set username = #{username} where id = #{id};
+    </update>
+
+    <!--#{}符中不是乱填的数据-->
+    <!--查询数据库自增主键-->
+    <!--keyProperty:返回的主键放在User中的id保存-->
+    <!--order:相对于Insert语句的执行顺序-->
+    <!--resultType：keyProperty的类型-->
+    <update id="insertUser" parameterType="com.mio4.pojo.User">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+        insert into user (username,birthday,sex,address) values(#{username},#{birthday},#{sex},#{address})
+    </update>
+
+
+
+</mapper>

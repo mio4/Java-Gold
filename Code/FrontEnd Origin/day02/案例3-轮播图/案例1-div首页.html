@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.header div{
+				float:left;
+				width:33.33%;
+				line-height:40px ;	
+			}
+			.header a{
+				padding-left: 5px;
+			}
+			a{
+				text-decoration:none;
+			}
+			.menu{
+				width:100%;
+				height:50px;
+				background-color: #000;
+				padding-top:3px;
+			}
+			.menu ul li{
+				list-style-type:none;
+				display:inline;
+			}
+			.menu a{
+				font-size: 20px;
+				color:#0ff;
+			}
+			.cle{
+				clear:both;
+			}
+			.shift_photo{
+				width:100%;
+				margin-top:10px;
+			}
+			.shift_photo img{
+				width:100%;
+			}
+			.left{
+				float:left;
+				width:16%;
+			}
+			.right{
+				float:left;
+				width:84%;
+			}
+			.middle{
+				float:left;
+				width:50%;
+			}
+			.item{
+				float:left;
+				width:16.67%;
+			}
+			.ad1{
+				width:100%;
+			}
+		</style>
+	</head>
+	<body onload="init()">
+		<div>
+			<!--logo-->
+			<div class="header">
+				<div><img src="../img/logo2.png" /></div>
+				<div><img src="../img/header.jpg"/></div>
+				<div>
+					<a href="">登陆</a>
+					<a href="">注册</a>
+					<a href="">购物车</a>
+				</div>
+			</div>
+			
+			<div class="cle"></div>
+			<!--菜单-->
+			<div class="menu">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">首页</a></li>
+				</ul>
+			</div>
+			
+			<!--轮播图-->
+			<div class="shift_photo">
+				<img id="shiftPhoto" src="../img/1.jpg"/>
+			</div>
+			
+			
+			<!--热门商品-->
+			<!--
+            	作者：461152465@qq.com
+            	时间：2018-09-13
+            	描述：左边放图片
+            			右边放商品
+            -->
+            <div>
+            	<h1 style="display:inline">热门商品</h1>
+            	<img src="../img/title2.jpg" />
+            </div>
+			<div class="hot_goods">
+				<div class="left">
+					<!--存放商品图片-->
+					<img src="../img/big01.jpg" />
+				</div>
+				<div class="right">
+					<div class="middle">
+						<img src="../img/middle01.jpg"  />
+					</div>
+					<div class="item">
+						<img src="../img/small08.jpg"  />
+						<p align="center"><a href="#" >电饭煲</a></div></p>
+						<p align="center">￥200</p>
+					</div>
+					<div class="item">
+						<img src="../img/small08.jpg"  />
+						<p align="center"><a href="#" >电饭煲</a></div></p>
+						<p align="center">￥200</p>
+					</div>
+					<div class="item">
+						<img src="../img/small08.jpg"  />
+						<p align="center"><a href="#" >电饭煲</a></div></p>
+						<p align="center">￥200</p>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="cle"></div>
+			<!--广告-->
+			<div class="ad1">
+				<img src="../img/title2.jpg" /> 
+				
+			</div>
+			
+			<div></div>
+			
+			<!--XXX-->
+			<div></div>
+			
+			<div></div>
+		</div>
+	</body>
+	
+	<script>
+		var i = 1;
+		//页面加载成功后，创建定时器
+		function init(){
+			setInterval(changeImage,1000);
+		}
+		//改变图片的函数
+		function changeImage(){
+			var imgObj = document.getElementById("shiftPhoto");
+			i++;
+			if(i == 4){
+				i = 1;
+			}
+			imgObj.src="../img/"+ i +".jpg";
+		}
+	</script>
+</html>

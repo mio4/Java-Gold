@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--指定Mybatis日志的具体实现-->
+    <settings>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+
+        <setting name="logImpl" value="LOG4J"/>
+        <!--使用懒加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+    <environments default="mysql">
+        <environment id="mysql">
+            <!--指定事务管理类型-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis3?characterEncoding=utf-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--持久化类的映射文件-->
+    <mappers>
+        <mapper class="com.mio4.mapper.CardMapper"/>
+        <mapper class="com.mio4.mapper.PersonMapper"/>
+        <mapper class="com.mio4.mapper.StudentMapper"/>
+        <mapper class="com.mio4.mapper.ClazzMapper"/>
+    </mappers>
+
+
+</configuration>

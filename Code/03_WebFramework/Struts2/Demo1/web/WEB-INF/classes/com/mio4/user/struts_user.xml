@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">-->
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <!--配置Action-->
+        <action name="Hello" class="com.mio4.action.HelloAction" method="sayHello">
+            <!-- 配置跳转页面 -->
+            <result name="ok">/demo1/success.jsp</result>
+        </action>
+    </package>
+
+
+</struts>

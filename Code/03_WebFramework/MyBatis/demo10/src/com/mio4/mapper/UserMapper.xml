@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mio4.mapper.UserMapper">
+    <insert id="save" parameterType="com.mio4.domain.User" useGeneratedKeys="true">
+        INSERT INTO TB_USER(name,sex,age) VALUES(#{name},#{sex},#{age})
+    </insert>
+
+    <!--CRUD-->
+    <!--parameterType：传入的参数类型-->
+    <!--resultType：执行SQL之后返回的结果-->
+    <insert id="saveUser" parameterType="com.mio4.domain.User" useGeneratedKeys="true">
+        INSERT INTO TB_USER (name,sex,age)
+        VALUES (#{name},#{sex},#{age})
+    </insert>
+
+    <select id="selectUser" parameterType="int" resultType="com.mio4.domain.User">
+        SELECT * FROM TB_USER WHERE id = #{id}
+    </select>
+
+    <update id="updateUser" parameterType="com.mio4.domain.User">
+        UPDATE TB_USER
+        SET name = #{name},sex = #{sex}, age = #{age}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM TB_USER WHERE id = #{id}
+    </delete>
+
+    <!--Map-->
+    <select id="selectUser2" resultType="map">
+        SELECT * FROM TB_USER
+    </select>
+
+    <!--手动配置映射关系-->
+    <!--id表示数据库的主键-->
+    <!--property：POJO中的属性，column:数据表的字段-->
+    <!--type:配合select查询时的返回类型-->
+    <resultMap id="userResultMap" type="com.mio4.domain.User2">
+        <id property="id" column="user_id"/>
+        <result property="name" column="user_name"/>
+        <result property="sex" column="user_sex"/>
+        <result property="age" column="user_age"/>
+    </resultMap>
+
+    <select id="selectUser3" resultMap="userResultMap">
+        SELECT * FROM TB_USER2
+    </select>
+
+    <!--一对多关系的描述-->
+    <resultMap id="studentResultMap" type="com.mio4.domain.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="age" column="age"/>
+        <!--关系映射-->
+        <association property="clazz" column="clazz_id" javaType="com.mio4.domain.Clazz" select="selectClazzWithId"/>
+    </resultMap>
+    <!--根据班级id查询班级-->
+    <select id="selectClazzWithId" resultType="com.mio4.domain.Clazz">
+        SELECT * FROM TB_CLAZZ where id = #{id}
+    </select>
+    <!--查询所有学生的信息-->
+    <select id="selectStudent" resultMap="studentResultMap">
+        SELECT * FROM TB_STUDENT
+    </select>
+
+    <!--一对多关系的描述-->
+    <resultMap id="clazzResultMap" type="com.mio4.domain.Clazz">
+        <id property="id" column="id"/>
+        <id property="code" column="code"/>
+        <!--一个班级有多个学生，属性是一个集合-->
+        <!--column:id 使用班级的clazz_id[id]作为条件查询学生-->
+        <collection property="students" javaType="ArrayList" column="id" ofType="com.mio4.domain.Student" select="selectStudentWithId"/>
+    </resultMap>
+    <!--根据班级id查询学生-->
+    <select id="selectStudentWithId" resultType="com.mio4.domain.Student">
+        SELECT * FROM TB_STUDENT WHERE clazz_id = #{id}
+    </select>
+    <!--查询所有的班级信息-->
+    <select id="selectClazz" resultMap="clazzResultMap">
+        SELECT * FROM TB_CLAZZ;
+    </select>
+
+</mapper>

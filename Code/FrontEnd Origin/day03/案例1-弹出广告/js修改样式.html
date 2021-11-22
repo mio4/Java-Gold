@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--功能：点击按钮，修改div-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function btnClick(){
+				//获取div对象
+				var Obj = document.getElementById("div01");
+				//alert(Obj);
+				
+				//操作元素
+				Obj.style.backgroundColor="#ff0";
+				
+				//添加边框
+				Obj.style.border = "1px solid red";
+				
+				//添加高和款
+				Obj.style.width="100px";
+				Obj.style.height="100px";
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="click me" onclick="btnClick()"/> <!--将DIV加上样式-->
+		<div id="div01"></div>
+	</body>
+</html>

@@ -1,0 +1,3 @@
+completion_tips_seen=org.eclipse.recommenders.completion.rcp.tips.types
+eclipse.preferences.version=1
+sessionprocessors=org.eclipse.recommenders.completion.rcp.sessionprocessors.baseRelevance;org.eclipse.recommenders.mylyn.rcp.sessionprocessors.mylyn;org.eclipse.recommenders.calls.rcp.sessionprocessors.call;org.eclipse.recommenders.subwords.rcp.sessionprocessors.subwords;org.eclipse.recommenders.types.rcp.sessionprocessors.types;org.eclipse.recommenders.completion.rcp.sessionprocessors.tips;org.eclipse.recommenders.constructors.rcp.sessionprocessors.constructorCompletion;org.eclipse.recommenders.overrides.rcp.completion.processor

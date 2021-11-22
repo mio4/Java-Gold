@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态生成验证码</title>
+    <script>
+        function changeImg(obj){
+            obj.src="/BasicDemo6/Code?i=" + Math.random();
+        }
+    </script>
+</head>
+<body>
+    <img src="/BasicDemo6/Code" alt="验证码" onclick="changeImg(this)"/>
+</body>
+</html>

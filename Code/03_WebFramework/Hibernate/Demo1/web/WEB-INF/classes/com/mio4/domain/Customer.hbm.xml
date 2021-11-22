@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--约束文件-->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <!--指定类和表名的映射关系-->
+    <class name="com.mio4.domain.Customer" table="cst_customer">
+        <!--
+            name:JavaBean的属性
+            column:表结构字段
+        -->
+        <id name="cust_id" column="cust_id">
+            <!-- 主键生成策略 -->
+            <generator class="native"/>
+        </id>
+
+        <!--配置其他的属性-->
+        <property name="cust_name" column="cust_name"/>
+        <property name="cust_user_id" column="cust_user_id"/>
+        <property name="cust_create_id" column="cust_create_id"/>
+        <property name="cust_source" column="cust_source"/>
+        <property name="cust_industry" column="cust_industry"/>
+        <property name="cust_level" column="cust_level"/>
+        <property name="cust_linkman" column="cust_linkman"/>
+        <property name="cust_phone" column="cust_phone"/>
+        <property name="cust_mobile" column="cust_mobile"/>
+
+        <!--添加字段-->
+        <property name="add_info" column="add_info"/>
+    </class>
+</hibernate-mapping>

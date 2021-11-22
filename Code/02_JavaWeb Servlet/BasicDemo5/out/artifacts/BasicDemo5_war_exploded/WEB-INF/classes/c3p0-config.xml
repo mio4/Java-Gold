@@ -1,0 +1,37 @@
+<c3p0-config>
+	<!-- 默认配置，如果没有指定则使用这个配置 -->
+	<default-config>
+		<!-- 基本配置 -->
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/day09</property>
+		<property name="user">root</property>
+		<property name="password">123456</property>
+	
+		<!--扩展配置-->
+		<property name="checkoutTimeout">30000</property>
+		<property name="idleConnectionTestPeriod">30</property>
+		<property name="initialPoolSize">10</property>
+		<property name="maxIdleTime">30</property>
+		<property name="maxPoolSize">100</property>
+		<property name="minPoolSize">10</property>
+		<property name="maxStatements">200</property>
+	</default-config> 
+	
+	
+	<!-- 命名的配置 -->
+	<named-config name="demo1">
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/xxxx</property>
+		<property name="user">root</property>
+		<property name="password">1234</property>
+		
+		
+		<!-- 如果池中数据连接不够时一次增长多少个 -->
+		<property name="acquireIncrement">5</property>
+		<property name="initialPoolSize">20</property>
+		<property name="minPoolSize">10</property>
+		<property name="maxPoolSize">40</property>
+		<property name="maxStatements">20</property>
+		<property name="maxStatementsPerConnection">5</property>
+	</named-config>
+</c3p0-config> 

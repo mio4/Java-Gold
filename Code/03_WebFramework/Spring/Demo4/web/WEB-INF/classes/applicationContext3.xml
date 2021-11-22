@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+
+    <!--配置用户的Dao-->
+    <bean id="customerDao" class="com.mio4.demo3.CustomerDaoImpl"/>
+    <!--配置切面类-->
+    <bean id="myAspectXML" class="com.mio4.demo3.MyAspectXML"/>
+    <!--配置AOP-->
+    <aop:config>
+        <aop:aspect ref="myAspectXML">
+            <!--<aop:before method="log" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>-->
+            <!--<aop:after method="log" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>-->
+            <!--<aop:after method="afterLog" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>-->
+            <!--<aop:before method="beforeLog" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>-->
+            <!--<aop:after-returning method="beforeLog" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>-->
+            <!--<aop:after-throwing method="beforeLog" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>-->
+            <aop:around method="roundLog" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
+
+
+
+
+
+
+

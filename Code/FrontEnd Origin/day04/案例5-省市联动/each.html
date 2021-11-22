@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>05-可见性过滤选择器.html</title>
+
+ <script src="../js/jquery-1.11.0.min.js"></script>
+ <script type="text/javascript">
+ 	$(function(){
+ 		$("#b1").click(function(){
+ 			//1.获取文本隐藏
+ 			//alert($("input:hidden").size())
+ 			$("input:hidden").each(function(index,dom){
+ 				//alert(this.value)
+ 				//alert($(this).val());
+ 				//alert(index)//索引
+ 				//alert(dom.value)
+ 			});
+ 		});
+ 		
+ 		$("#b2").click(function(){
+ 			$.each($("input:hidden"), function() {
+ 				alert($(this).val());
+ 			});
+ 		});
+ 	});
+ </script>
+</head>
+<body>
+  
+
+  <input type="button" value=" 选取所有的文本隐藏域, 并打印它们的值"  id="b1"/>
+  <input type="button" value=" 选取所有的文本隐藏域, 并打印它们的值"  id="b2"/>
+  <br /><br />
+  
+  <!--文本隐藏域-->
+ <input type="hidden" value="hidden_1">
+ <input type="hidden" value="hidden_2">
+ <input type="hidden" value="hidden_3">
+ <input type="hidden" value="hidden_4">
+  
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function btnClick(a,b){
+				alert(a+b);
+			}
+			
+			function init(){
+				//alert("页面加载成功");
+				document.getElementById("btn2").onclick=btn2Click();
+			}
+			
+			var btn2Click = function(){
+				alert(123456);
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<input type="button"  value="Click me!" onclick="btnClick(1,1)"/>
+		<input type="button" value="Click me2" id="btn2"/>
+	</body>
+	<script>
+		
+	</script>
+</html>

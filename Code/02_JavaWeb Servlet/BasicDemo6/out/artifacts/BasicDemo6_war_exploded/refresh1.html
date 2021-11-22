@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=/BasicDemo6/refresh2.html">
+    <title>页面1</title>
+</head>
+<body>
+    <span id="sid">3</span>s之后跳转到refresh2.html
+</body>
+<script type="text/javascript">
+    onload=function(){
+        setInterval(changeUrl,1000);
+    }
+    var i = 3;
+    function changeUrl(){
+        var  obj = document.getElementById("sid");
+        obj.innerHTML=i;
+        i--;
+    }
+</script>
+</html>

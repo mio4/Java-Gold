@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mio4.mapper.StudentMapper">
+    <!--根据学生id查询学生信息-->
+    <select id="SelectStudentById" parameterType="int" resultMap="studentResultMap">
+        SELECT * FROM TB_CLAZZ c,TB_STUDENT s
+        WHERE c.id = s.clazz_id
+        and s.id = #{id}
+    </select>
+
+
+    <!--根据班级id查询学生信息-->
+    <select id="SelectStudentByClazzId" parameterType="int" resultMap="studentResultMap">
+        SELECT * FROM TB_STUDENT WHERE clazz_id = #{id}
+    </select>
+    <resultMap type="com.mio4.domain.Student" id="studentResultMap">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="age" column="age"/>
+        <!--多对一关系的映射-->
+        <association property="clazz" javaType="com.mio4.domain.Clazz">
+            <id property="id" column="id"/>
+            <result property="code" column="code"/>
+            <result property="name" column="name"/>
+        </association>
+    </resultMap>
+</mapper>

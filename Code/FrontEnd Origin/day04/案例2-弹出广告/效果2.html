@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<script>
+			$(function(){
+				$("#b1").click(function(){
+					//$("#b1Div").hide(1000);
+					$("#b1Div").toggle();
+				});
+			});
+			
+			$(function(){
+				$("#b2").click(function(){
+					$("#b2Div").slideToggle(1000);
+				});
+				
+				$("#b3").click(function(){
+					$("#b3Div").fadeToggle(1000);
+				});
+				
+				
+			});
+			
+
+		</script>
+	</head>
+	<body>
+		<input type="button" id="b1" value="显示/隐藏 b1Div" />
+		<div id="b1Div">Piggy One</div> <br/>
+		<input type="button" id="b2" value="滑出/滑入b2Div"/>
+		<div id="b2Div">Piggy Two</div><br/>
+		<input type="button" id="b3" value="淡出/淡入b3Div" />
+		<div id="b3Div">Piggy Three</div>
+	</body>
+</html>

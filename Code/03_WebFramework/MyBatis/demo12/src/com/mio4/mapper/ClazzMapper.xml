@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mio4.mapper.ClazzMapper">
+    <select id="SelectClazzById" parameterType="int" resultMap="clazzResultMap">
+        SELECT * FROM TB_CLAZZ WHERE id = #{id}
+    </select>
+    <resultMap type="com.mio4.domain.Clazz" id="clazzResultMap">
+        <id property="id" column="id"/>
+        <result property="code" column="code"/>
+        <result property="name" column="name"/>
+        <collection property="student_list" javaType="ArrayList" column="id" ofType="com.mio4.domain.Student" select="com.mio4.mapper.StudentMapper.SelectStudentByClazzId" fetchType="lazy">
+            <id property="id" column="s_id"/>
+            <result property="name" column="name"/>
+            <result property="sex" column="sex"/>
+            <result property="age" column="age"/>
+        </collection>
+    </resultMap>
+
+</mapper>

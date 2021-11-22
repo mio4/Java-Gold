@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>06-属性选择器.html</title>
+ <!--   引入jQuery -->
+ <script src="../js/jquery-1.11.0.min.js"></script>
+ <script src="../js/assist.js"></script>
+ <link rel="stylesheet" type="text/css" href="../css/style.css" /> 
+ <script type="text/javascript">
+ 	$(function(){
+// 		<input type="button" value="选取含有 属性title 的div元素." id="btn1"/>
+		$("#btn1").click(function(){
+			$("div[title]").css("background-color","#ff0");
+		});
+//		<input type="button" value="选取 属性title值等于“test”的div元素." id="btn2"/>
+		$("#btn2").click(function(){
+			$("div[title='test']").css("background-color","#ff0");
+		});
+ 	});
+ </script>
+<body>
+  <button id="reset">手动重置页面元素</button>
+  <input type="checkbox" id="isreset" checked="checked"/><label for="isreset">点击下列按钮时先自动重置页面</label>	
+  <h3> 属性选择器.</h3>
+ 
+
+  <input type="button" value="选取含有 属性title 的div元素." id="btn1"/>
+  <input type="button" value="选取 属性title值等于“test”的div元素." id="btn2"/>
+
+	<br /><br />
+   <div class="one" id="one" >
+ id为one,class为one的div
+      <div class="mini">class为mini</div>
+  </div>
+
+    <div class="one"  id="two" title="test" >
+	 id为two,class为one,title为test的div.
+      <div class="mini"  title="other">class为mini,title为other</div>
+      <div class="mini"  title="test">class为mini,title为test</div>
+  </div>
+
+  <div class="one">
+      <div class="mini">class为mini</div>
+      <div class="mini">class为mini</div>
+	  <div class="mini">class为mini</div>
+	  <div class="mini"></div>
+  </div>
+
+  
+
+  <div class="one">
+      <div class="mini">class为mini</div>
+      <div class="mini">class为mini</div>
+	  <div class="mini">class为mini</div>
+	  <div class="mini"  title="tesst">class为mini,title为tesst</div>
+  </div>
+
+
+  <div style="display:none;"  class="none">style的display为"none"的div</div>
+  
+  <div class="hide">class为"hide"的div</div>
+ 
+  <div>
+  包含input的type为"hidden"的div<input type="hidden" size="8"/>
+  </div>
+
+</body>
+</html>

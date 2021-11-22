@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://www.itheima.com" onclick="one()">黑马程序员</a><br/>
+		<a href="http://www.itcast.cn" onclick="two()">传智播客</a><br/>
+		<script type="text/javascript">
+			function one(){
+				alert("我之后，黑马官网继续访问");
+			}
+			
+			function two(event){
+				alert("我之后，传智官网不再访问");
+				var event = event || window.event;
+				event.preventDefault();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>01_内部插入节点.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//0.获取两个元素
+		var $city=$("#city");
+		var $fk=$("#fk");
+		
+		//1.在city的后面内部追加 反恐
+//		$city.append($fk);
+		
+		//2.在city的前面内部插入 反恐
+			$city.prepend($fk)
+		
+	});
+	</script>
+	</head>
+	 
+	<body>
+		 <ul id="city">
+		 	 <li id="bj" name="beijing">北京</li>
+			 <li id="tj" name="tianjin">天津</li>
+			 <li id="cq" name="chongqing">重庆</li>
+		 </ul>
+		 
+		 
+		  <ul id="love">
+		 	 <li id="fk" name="fankong">反恐</li>
+			 <li id="xj" name="xingji">星际</li>
+		 </ul>
+		
+		<div id="foo1">Hello1</div> 
+       
+	</body>
+<script type="text/javascript">
+	
+</script>
+   
+</html>
+
+
+

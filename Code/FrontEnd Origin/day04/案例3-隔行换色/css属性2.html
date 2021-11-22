@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				//1. 给username赋予title属性
+				var $username = $("[name='username']");
+				$username.attr("title","mio");
+				
+				//2.给username添加value和class属性
+				$username.attr({
+					"value":"mio",
+					"class":"textClass"
+				});
+				
+				//3.删除username的class属性
+				$username.removeAttr("class");
+				
+				//4.给div添加边框样式
+				var $div1 = $("div");
+				$div1.css("border","1px solid red");
+				//alert($div1.css("border"));
+				
+				//4.给div添加多个样式
+				$div1.css({
+					"width":"100%",
+					"background-color":"#ff0"
+				});
+			});
+		</script>
+		
+		<style type="text/css">
+			.textClass{
+				background-color:aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>表单</h3>
+	<form action="">
+		<table border="1">
+			<tr id="tr1">
+				<td><label>姓名</label></td>
+				<td><input type="text" name="username"/></td>
+			</tr>
+			<tr>
+				<td><span>密码</span></td>
+				<td><input type="password" name="password" /></td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td>
+					<input type="radio" name="gender" value="男" />男
+					<input type="radio" name="gender" value="女" />女
+				</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td>
+					<button type="button">普通按钮</button>
+					<input type="submit" value="提交按钮" />
+					<input type="reset" value="重置按钮" />
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	<h3>公告信息</h3>
+	<div>
+		未满18慎进
+	</div>
+	<span id="sp">外span<a href='#'>内超链</a></span>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+
+    <!--&lt;!&ndash;配置用户的Dao&ndash;&gt;-->
+    <!--<bean id="customerDao" class="com.mio4.demo3.CustomerDaoImpl"/>-->
+    <!--&lt;!&ndash;配置切面类&ndash;&gt;-->
+    <!--<bean id="myAspectXML" class="com.mio4.demo3.MyAspectXML"/>-->
+    <!--&lt;!&ndash;配置AOP&ndash;&gt;-->
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="myAspectXML">-->
+            <!--<aop:before method="log" pointcut="execution(public void com.mio4.demo3.CustomerDaoImpl.save())"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+</beans>
+
+
+
+
+
+
+

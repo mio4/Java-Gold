@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<script>
+			$(function(){
+				//开始一个定时器 2s之后展示
+				setTimeout(showAd,2000);
+			});
+			
+			function showAd(){
+				//获取div
+				//$("#ad").show();
+				$("#ad").slideDown();
+				//调用效果方法
+				
+				//开启另一个定时器：作用是隐藏元素
+				setTimeout(hideAd,3000);
+			}
+			
+			function hideAd(){
+				//$("#ad").hide();
+				$("#ad").slideUp();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ad" style="width:100%;display:none;">
+		<!--<img src="../img/ad.jpg" width="100%" />-->
+		<img src="../img/regist_bg.jpg" width="100%" />
+		</div>
+	</body>
+</html>

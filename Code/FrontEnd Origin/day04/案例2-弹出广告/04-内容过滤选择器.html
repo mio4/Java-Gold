@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>04-内容过滤选择器.html</title>
+ <!--   引入jQuery --> 
+ <script src="../js/jquery-1.11.0.min.js"></script>
+ <script src="../js/assist.js"></script>
+ <link rel="stylesheet" type="text/css" href="../css/style.css" /> 
+ <script type="text/javascript">
+ 	$(function(){
+ 		$("#btn1").click(function(){
+ 			$("div:has('.mini')").css("background-color","#0ff");
+ 		});
+ 	});
+ </script>
+</head>
+<body>
+  <h3>内容过滤选择器.</h3>
+  <button id="reset">手动重置页面元素</button>
+  <input type="checkbox" id="isreset" checked="checked"/><label for="isreset">点击下列按钮时先自动重置页面</label><br /><br />
+
+
+  <input type="button" value="选取含有class为mini元素 的div元素." id="btn1"/>
+
+
+
+<br /><br />
+
+   <!-- 测试的元素 -->
+  <div class="one" id="one" >
+ id为one,class为one的div
+      <div class="mini">class为mini</div>
+  </div>
+
+    <div class="one"  id="two" title="test" >
+	 id为two,class为one,title为test的div.
+      <div class="mini"  title="other">class为mini,title为other</div>
+      <div class="mini"  title="test">class为mini,title为test</div>
+  </div>
+
+  <div class="one">
+      <div class="mini">class为mini</div>
+      <div class="mini">class为mini</div>
+	  <div class="mini">class为mini</div>
+	  <div class="mini"></div>
+  </div>
+
+  
+
+  <div class="one">
+      <div class="mini">class为mini</div>
+      <div class="mini">class为mini</div>
+	  <div class="mini">class为mini</div>
+	  <div class="mini"  title="tesst">class为mini,title为tesst</div>
+  </div>
+
+
+  <div style="display:none;"  class="none">style的display为"none"的div</div>
+  
+  <div class="hide">class为"hide"的div</div>
+ 
+  <div>
+  包含input的type为"hidden"的div<input type="hidden" size="8"/>
+  </div>
+
+  
+  <span id="mover">正在执行动画的span元素.</span>
+
+</body>
+</html>

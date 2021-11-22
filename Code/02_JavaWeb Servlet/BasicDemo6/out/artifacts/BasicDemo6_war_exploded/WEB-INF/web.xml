@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--LocalServlet-->
+    <servlet>
+        <servlet-name>LocalServlet</servlet-name>
+        <servlet-class>com.mio4.response.LocalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LocalServlet</servlet-name>
+        <url-pattern>/LocalServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--Loc1Servlet-->
+    <servlet>
+        <servlet-name>Loc1Servlet</servlet-name>
+        <servlet-class>com.mio4.response.Loc1Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Loc1Servlet</servlet-name>
+        <url-pattern>/Loc1</url-pattern>
+    </servlet-mapping>
+
+
+    <!--Loc2Servlet-->
+    <servlet>
+        <servlet-name>Loc2Servlet</servlet-name>
+        <servlet-class>com.mio4.response.Loc2Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Loc2Servlet</servlet-name>
+        <url-pattern>/Loc2</url-pattern>
+    </servlet-mapping>
+
+    
+    <!--Response Writer-->
+    <servlet>
+        <servlet-name>PrintServlet</servlet-name>
+        <servlet-class>com.mio4.responseb.PrintServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PrintServlet</servlet-name>
+        <url-pattern>/PrintServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--DownServlet1-->
+    <servlet>
+        <servlet-name>DownloadServlet2</servlet-name>
+        <servlet-class>com.mio4.responsed.DownloadServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadServlet2</servlet-name>
+        <url-pattern>/DownloadServlet2</url-pattern>
+    </servlet-mapping>
+
+    <!--CodeServlet-->
+    <servlet>
+        <servlet-name>CodeServlet</servlet-name>
+        <servlet-class>com.mio4.responsed.CodeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CodeServlet</servlet-name>
+        <url-pattern>/Code</url-pattern>
+    </servlet-mapping>
+    
+    <!--RowServlet-->
+    <servlet>
+        <servlet-name>RowServlet</servlet-name>
+        <servlet-class>com.mio4.request.RowRequest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RowServlet</servlet-name>
+        <url-pattern>/row</url-pattern>
+    </servlet-mapping>
+
+    <!--HeaderServlet-->
+    <servlet>
+        <servlet-name>HeaderServlet</servlet-name>
+        <servlet-class>com.mio4.request.HeaderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HeaderServlet</servlet-name>
+        <url-pattern>/header</url-pattern>
+    </servlet-mapping>
+    
+    <!--ParamServlet-->
+    <servlet>
+        <servlet-name>ParamServlet</servlet-name>
+        <servlet-class>com.mio4.request.ParamServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ParamServlet</servlet-name>
+        <url-pattern>/param</url-pattern>
+    </servlet-mapping>
+
+    <!--请求转发-->
+    <servlet>
+        <servlet-name>Servlet1</servlet-name>
+        <servlet-class>com.mio4.requestForward.Servlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet1</servlet-name>
+        <url-pattern>/servlet1</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Servlet2</servlet-name>
+        <servlet-class>com.mio4.requestForward.Servlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet2</servlet-name>
+        <url-pattern>/servlet2</url-pattern>
+    </servlet-mapping>
+    
+    <!--Hello-->
+    <servlet>
+        <servlet-name>Hello</servlet-name>
+        <servlet-class>com.mio4.testURL.Hello</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function checkForm(){
+				//获取用户名和内容
+				var usernameobj = document.getElementById("username");
+				var username = usernameobj.value;
+				//判断value是否为空
+				if(username == null || username == ""){
+					alert("用户名为空");
+					return false;
+				}
+				
+				//获取密码以及内容
+				var passwordObj = document.getElementById("password");
+				var password = passwordObj.value;
+				if(password == null || password == ""){
+					alert("密码不能为空");
+					return false;
+				}
+			}
+			
+			var testFunction = function(a){
+				alert(a);
+			}
+		</script>
+	</head>
+	<body>
+		<form action="http://www.baidu.com" method="get" onsubmit="return checkForm()">
+			姓名：<input type="text" name="username" id="username"><br/>
+			密码：<input type="password"  id="password"><br/>
+			<input type="submit" value="提交">
+			<input type="reset" value="重置">
+			<input type="button" value="测试函数定义" onclick="testFunction(1)" />
+		</form>
+	</body>
+</html>

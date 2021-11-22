@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--注入User到Spring容器-->
+    <bean name="user" class="com.mio4.bean.User">
+        <property name="name" value="mio"></property>
+        <property name="age" value="20"></property>
+    </bean>
+
+    <!--LifeCycle-->
+    <bean id="person" class="com.mio4.bean.Person" init-method="myInitialize"
+          destroy-method="myDestroy">
+        <property name="name" value="JiuZhang"></property>
+        <property name="address" value="广州"></property>
+        <property name="phone" value="1801119449"></property>
+    </bean>
+    <bean id="beanPostProcessor" class="com.mio4.processor.MyBeanPostProcessor"></bean>
+    <bean id="instantiationAwareBeanPostProcessor" class="com.mio4.processor.MyInstantiationAwareBeanPostProcessor"></bean>
+    <bean id="beanFactoryPostProcessor" class="com.mio4.processor.MyBeanFactoryPostProcessor"></bean>
+
+</beans>

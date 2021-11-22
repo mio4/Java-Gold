@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		
+		var $username=$("[name='username']");
+		$username.prop("value","许木木");
+		//3.1 获取 username的value属性的值
+		//alert($username.val());
+		
+		//3.2 设置 username的默认值为"许多多"
+		$username.val("许多多")
+		
+		//3.3通过html获取div标签体的内容
+		var $div=$("div");
+		//alert($div.html());
+		
+		//3.4通过html设置div标签体的内容
+		//$div.html("已满18,请带墨镜");
+		
+		//3.5通过text获取div标签体的内容
+		//alert($div.text());
+			
+		//3.6通过text设置div标签体的内容
+		//$div.text("已满18,请带墨镜");
+		
+		
+		//3.7 两者设置值的区别
+		//$div.html("<a href='#'>我是一个连接</a>");//就是一个超链接
+		//$div.html($("<a href='#'>").html("我"))
+		//$div.text("<a href='#'>我是一个连接</a>");//表括号里面的内容作为普通的字符串
+		
+		//3.8 两者获取值的区别
+		alert($("#sp").html());//获取源码
+		alert($("#sp").text());//获取只是展示的内容
+		//$div.html($("<a href='#'>").html("我"));
+		});	
+	</script>
+	<style type="text/css">
+		.textClass {
+			background-color: #ff0;
+		}
+	</style>
+</head>
+<body>
+	<h3>表单</h3>
+	<form action="">
+		<table border="1">
+			<tr id="tr1">
+				<td><label>姓名</label></td>
+				<td><input type="text" name="username"/></td>
+			</tr>
+			<tr>
+				<td><span>密码</span></td>
+				<td><input type="password" name="password" /></td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td>
+					<input type="radio" name="gender" value="男" />男
+					<input type="radio" name="gender" value="女" />女
+				</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td>
+					<button type="button">普通按钮</button>
+					<input type="submit" value="提交按钮" />
+					<input type="reset" value="重置按钮" />
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	<h3>公告信息</h3>
+	<div>
+		未满18慎进
+	</div>
+	<span id="sp">外span<a href='#'>内超链</a></span>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../js/jquery-1.11.0.min.js"></script>
+ 	<script type="text/javascript">
+	 	$(function(){
+	 		$("#selectAll").click(function(){
+	 			//1.获取当前元素的选中状态 this在funcation中代表的是当前dom对象
+	 			//alert(this.checked);
+	 			//alert($(this).attr("checked"));//获取undefined
+	 			//alert($(this).prop("checked"));
+	 			
+	 			//2.获取所有的复选框 让其状态和 当前元素的选中状态保持一致
+	 			$(".itemSelect").prop("checked",$(this).prop("checked"));
+	 		});
+	 		
+	 		
+	 	});
+	</script>
+	<body>
+		<table id="tab1" border="1" width="800" align="center" >
+			<tr>
+				<td colspan="5"><input type="button" value="添加"/> <input type="button" value="删除"></td>
+			</tr>
+			<tr>
+				<th><input type="checkbox" id="selectAll"></th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>1</td>
+				<td>手机数码</td>
+				<td>手机数码类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>2</td>
+				<td>电脑办公</td>
+				<td>电脑办公类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>3</td>
+				<td>鞋靴箱包</td>
+				<td>鞋靴箱包类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>4</td>
+				<td>家居饰品</td>
+				<td>家居饰品类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

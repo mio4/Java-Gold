@@ -1,0 +1,6 @@
+# 过滤所有.class文件
+# 过滤所有jar包
+*.class
+*.jar
+*.idea
+Local/

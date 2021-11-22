@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.min.js"></script>
+	</head>
+	<body>
+		<input type="text" id="username" value="mio"/>
+	</body>
+	<script>
+		//var obj = document.getElementById("username");
+		//var $user = $(obj);
+		//alert($user.val());
+		
+		//方式1
+		//1.获取jQuery对象
+		var $u = $("#username");
+		//2.转换为DOM对象
+		var obj = $u.get(0);
+		alert(obj.value);
+		
+		
+		//方式2
+		//2.转换为DOM对象
+		var obj = $u[0];
+		alert(obj.value);
+	</script>
+</html>
+

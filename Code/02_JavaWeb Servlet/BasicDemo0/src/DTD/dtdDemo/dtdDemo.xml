@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE web-app SYSTEM "web-app_2_3.dtd">
+<web-app version="3.0">
+    <servlet>
+        <servlet-name></servlet-name>
+        <servlet-class></servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name></servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file></welcome-file>
+    </welcome-file-list>
+</web-app>

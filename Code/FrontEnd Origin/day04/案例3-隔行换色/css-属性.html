@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		//1.1给username添加title属性
+		var $username=$("[name='username']");
+		$username.attr("title","姓名");
+		//1.2获取username的title属性
+		//alert($username.attr("title"));
+		
+		//1.3给username添加value和class属性
+		$username.attr({
+			"value":"许多多",
+			"class":"textClass"
+		});
+		
+		//1.4删除username的class属性
+		$username.removeAttr("class");
+		
+		//2.1给username添加一个名为textClass的样式
+		$username.addClass("textClass");
+		
+		//2.2删除username的名为textClass的样式
+		$username.removeClass("textClass");
+		
+		
+		//4.1 给div添加边框样式
+		var $div=$("div");
+		$div.css("border","1px solid red");
+		
+		//4.2 获取div的表框样式
+		//alert($div.css("border"));
+		
+		//4.3 给div添加多种样式
+		$div.css({
+			"width":"100px",
+			"height":"100px",
+			"background-color":"#ff0"
+		});
+		
+		//5 获取div的位置
+		//alert($div.offset().left)
+		
+		//6 获取div的高和宽
+		alert($div.width());
+		});	
+	</script>
+	<style type="text/css">
+		.textClass {
+			background-color: #ff0;
+		}
+	</style>
+</head>
+<body>
+	<h3>表单</h3>
+	<form action="">
+		<table border="1">
+			<tr id="tr1">
+				<td><label>姓名</label></td>
+				<td><input type="text" name="username"/></td>
+			</tr>
+			<tr>
+				<td><span>密码</span></td>
+				<td><input type="password" name="password" /></td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td>
+					<input type="radio" name="gender" value="男" />男
+					<input type="radio" name="gender" value="女" />女
+				</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td>
+					<button type="button">普通按钮</button>
+					<input type="submit" value="提交按钮" />
+					<input type="reset" value="重置按钮" />
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	<h3>公告信息</h3>
+	<div>
+		未满18慎进
+	</div>
+	<span id="sp">外span<a href='#'>内超链</a></span>
+</body>
+</html>

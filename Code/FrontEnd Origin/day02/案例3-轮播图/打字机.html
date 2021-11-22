@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var s = "a better tomorrow";
+			var i = 0;
+			var divObj;
+			function init(){
+				divObj = document.getElementById("divId");
+				setInterval(show,200);
+			}
+			function show(){
+				i++;
+				var s_ = s.substring(0,i);
+				divObj.innerHTML=s_;
+				if(i == s.length){
+					i=0;
+				}
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="divId"></div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mio4.mapper.EmployeeMapper">
+    <select id="selectEmployeeByIdLike" parameterType="hashmap" resultType="com.mio4.domain.Employee">
+        SELECT * FROM TB_EMPLOYEE WHERE state = 'ACTIVE'
+--         可选条件
+        <!--<if test="id != null">-->
+            <!--and id = #{id}-->
+        <!--</if>-->
+
+        <if test="loginname != null and password != null">
+            and loginname = #{loginname} and password = #{password}
+        </if>
+    </select>
+
+    <select id="selectEmployeeChoose" parameterType="hashmap" resultType="com.mio4.domain.Employee">
+        SELECT * FROM TB_EMPLOYEE WHERE state = 'ACTIVE'
+        <choose>
+            <when test="id != null">
+                and id = #{id}
+            </when>
+            <when test="loginname != null and password != null">
+                and loginname = #{loginname} and password = #{password}
+            </when>
+            <otherwise>
+                and sex = '男'
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="selectEmployeeWithId" parameterType="int" resultType="com.mio4.domain.Employee">
+        SELECT * FROM TB_EMPLOYEE WHERE id =  #{id}
+    </select>
+    <update id="updateEmployeeIfNecessary" parameterType="com.mio4.domain.Employee">
+        UPDATE TB_EMPLOYEE
+        <set>
+            <if test="loginname != null">loginname = #{loginname},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="age != null">age = #{age},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="sal != null">sal = #{sal},</if>
+            <if test="state != null">state = #{state}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+</mapper>

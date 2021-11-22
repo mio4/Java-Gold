@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>JSON</title>
+	</head>
+	<body>
+		<h2>JavaScript创建JSON对象</h2>
+	</body>
+	<p>
+		网站名称：<span id="jname"></span><br/>
+		网站地址：<span id="jurl"></span><br/>
+		其他： <span id="others"></span><br/>
+	</p>
+</html>
+
+<script type="text/javascript">
+	var JSONObject = {
+		"name":"mio4",
+		"url":"www.mio4.com",
+		"others":"nothing here"
+	}
+	document.getElementById("jname").innerHTML = JSONObject.name;
+	document.getElementById("jurl").innerHTML = JSONObject.url;
+	document.getElementById("others").innerHTML = JSONObject.others;
+</script>

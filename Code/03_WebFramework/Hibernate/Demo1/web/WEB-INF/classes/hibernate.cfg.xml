@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--连接MySQL数据库：必须配置-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_day01</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">123456</property>
+
+        <!--数据库方言：必须配置-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+
+        <!--在控制台显示SQL语句-->
+        <property name="hibernate.show_sql">true</property>
+        <!--格式化SQL语句-->
+        <property name="hibernate.format_sql">true</property>
+
+        <!--生成数据库表结构-->
+        <!--每次创建一张新表，然后再进行数据库操作-->
+        <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
+
+        <!--如果没有表则创建表，其他情况正常操作-->
+        <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
+
+        <!--JavaBean和数据库属性校验-->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+
+        <!--映射配置文件：必须配置-->
+        <mapping resource="com/mio4/domain/Customer.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

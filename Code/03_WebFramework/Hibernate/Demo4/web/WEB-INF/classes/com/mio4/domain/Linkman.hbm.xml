@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--约束文件-->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <!--指定类和表名的映射关系-->
+    <class name="com.mio4.domain.Linkman" table="cst_linkman">
+        <!--
+            name:JavaBean的属性
+            column:表结构字段
+        -->
+        <id name="lkm_id" column="lkm_id">
+            <!-- 主键生成策略 -->
+            <generator class="native"/>
+        </id>
+
+        <!--配置其他的属性-->
+        <property name="lkm_name" column="lkm_name"/>
+        <property name="lkm_gender" column="lkm_gender"/>
+        <property name="lkm_phone" column="lkm_phone"/>
+        <property name="lkm_mobile" column="lkm_mobile"/>
+        <property name="lkm_email" column="lkm_email"/>
+        <property name="lkm_qq" column="lkm_qq"/>
+        <property name="lkm_position" column="lkm_position"/>
+        <property name="lkm_memo" column="lkm_memo"/>
+
+        <!--多
+            name:Javabean中的属性
+            class:name属性对应的路径
+            column:外键的字段
+        -->
+        <many-to-one name="customer" class="com.mio4.domain.Customer" column="lkm_cust_id" cascade="save-update">
+
+        </many-to-one>
+
+    </class>
+</hibernate-mapping>

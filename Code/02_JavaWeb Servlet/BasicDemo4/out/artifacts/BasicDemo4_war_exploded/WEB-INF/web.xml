@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0"
+>
+    
+    <servlet>
+        <servlet-name>ResponseDemo1</servlet-name>
+        <servlet-class>com.mio4.web.ResponseDemo1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseDemo1</servlet-name>
+        <url-pattern>/servlet/ResponseDemo1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <servlet-class>com.mio4.web.HelloWorldServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <url-pattern>/servlet/HelloWorldServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ResponseDemo-->
+    <servlet>
+        <servlet-name>ResponseDemo1_2</servlet-name>
+        <servlet-class>com.mio4.web.ResponseDemo1_2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseDemo1_2</servlet-name>
+        <url-pattern>/servlet/ResponseDemo1_2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResponseDemo1_3</servlet-name>
+        <servlet-class>com.mio4.web.ResponseDemo1_3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseDemo1_3</servlet-name>
+        <url-pattern>/servlet/ResponseDemo1_3</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResponseDemo2</servlet-name>
+        <servlet-class>com.mio4.web.ResponseDemo2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseDemo2</servlet-name>
+        <url-pattern>/servlet/ResponseDemo2</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- RequestDemo-->
+    <servlet>
+        <servlet-name>RequestDemo01</servlet-name>
+        <servlet-class>com.mio4.web.RequestDemo01</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestDemo01</servlet-name>
+        <url-pattern>/servlet/RequestDemo01</url-pattern>
+    </servlet-mapping>
+
+    
+    <servlet>
+        <servlet-name>RequestDemo02</servlet-name>
+        <servlet-class>com.mio4.web.RequestDemo02</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestDemo02</servlet-name>
+        <url-pattern>/servlet/RequestDemo02</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RequestDemo03</servlet-name>
+        <servlet-class>com.mio4.web.RequestDemo03</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestDemo03</servlet-name>
+        <url-pattern>/servlet/RequestDemo03</url-pattern>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RequestDemo04</servlet-name>
+        <servlet-class>com.mio4.web.RequestDemo04</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestDemo04</servlet-name>
+        <url-pattern>/servlet/RequestDemo04</url-pattern>
+    </servlet-mapping>
+
+    <!-- CookieDemo -->
+    <servlet>
+        <servlet-name>CookieDemo01</servlet-name>
+        <servlet-class>com.mio4.web.CookieDemo01</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieDemo01</servlet-name>
+        <url-pattern>/servlet/CookieDemo01</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionDemo01</servlet-name>
+        <servlet-class>com.mio4.web.SessionDemo01</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionDemo01</servlet-name>
+        <url-pattern>/servlet/SessionDemo01</url-pattern>
+    </servlet-mapping>
+    
+    <!-- SessionDemo-->
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>com.mio4.web.IndexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/servlet/IndexServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BuyServlet</servlet-name>
+        <servlet-class>com.mio4.web.BuyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyServlet</servlet-name>
+        <url-pattern>/servlet/BuyServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListCartServlet</servlet-name>
+        <servlet-class>com.mio4.web.ListCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListCartServlet</servlet-name>
+        <url-pattern>/servlet/ListCartServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
