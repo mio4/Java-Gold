@@ -41,23 +41,10 @@
 
 :point_right:  [2021.05 毕业一年总结](https://github.com/mio4/Java-Gold/blob/master/010-social/one-year.md)
 
+:point_right:  [从零开始熟悉一个系统](https://github.com/mio4/Java-Gold/blob/master/010-social/learn-system.md)
+
 
 
 ## License
 
 MIT License
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 8c9dfdf246e290e9736378b02c0619d0f41bafeb
