@@ -43,11 +43,11 @@
 
 :point_right:  [从零开始熟悉一个系统](https://github.com/mio4/Java-Gold/blob/master/010-social/learn-system.md)
 
-:point_right: 2022.05 毕业两年总结（施工中，ddl：2022.6）
+:point_right:  [2022.05 毕业两年总结](https://github.com/mio4/Java-Gold/blob/master/010-social/two-year.md)
 
-# 炼金秘术
+# 其他总结
 
-:point_right: 中国房地产市场调研记录（施工中，ddl：2022.7）
+:point_right: 国内房地产市场调研记录（施工中，ddl：2022.7）
 
 
 ## License
